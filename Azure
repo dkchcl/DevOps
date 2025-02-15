@@ -70,7 +70,7 @@ Remove-AzResourceGroup -Name "myResourceGroup" -Force
 
 
 
-
+See List in table form---------------
 az group list -o table
 az account list -o table
 az resource list -o table
