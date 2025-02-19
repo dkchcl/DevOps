@@ -18,43 +18,52 @@ Explore and read about all the available options while creating the Resource Gro
 Click Review + Create and then Create to deploy the Resource Group.
 Verify the successful creation of the Resource Group by navigating back to the Resource Groups section.
 
-### Part 3: Create a Resource Group Using Azure CLI & Azure Powershell
-1. Install Azure CLI and Create a Resource Group Using CLI
+## Part 3: Create a Resource Group Using Azure CLI & Azure Powershell
+### i. Azure CLI Module --
+Install Azure CLI and Create a Resource Group Using CLI
 Install Azure CLI:
 
 Download and install the Azure CLI from Azure CLI Installation Guide.
 Verify installation by running the following command in the terminal:
+
 az --version
+
 Login to Azure using CLI:
 
 Open a terminal or command prompt and run:
+
 az login
+
 A browser window will open asking you to log in to your Azure account. Use the credentials provided by your Group Leads.
 After successful login, the CLI will display the list of available subscriptions.
 Create a Resource Group using CLI:
 
 Run the following command to create a new Resource Group named rg-cli:
-az group create --name rg-cli --location eastus
+
+az group create --name RG-DKC --location centralindia
+
 Replace eastus with your preferred region if needed.
 Verify the creation by running:
-az group list --output table
 
+az group list --output table   or    az group list -o table
 
+### Delete a Resource Group --
 
+az group delete -n RG-DKC
 
-### Azure PowerShell Module-------------------
+### ii. Azure PowerShell Module --
 
 Installing Azure PowerShell Module
 
 Azure PowerShell can be installed via PowerShell Gallery. Follow these steps:
 
-### 1. Install PowerShell (if not already installed)--------------------------
+### 1. Install PowerShell (if not already installed) --
 
 Ensure you have PowerShell 7 or later installed. You can check the version using:
 
 $PSVersionTable.PSVersion
 
-### 2. Install Azure PowerShell Module----------------------------
+### 2. Install Azure PowerShell Module --
 
 To install the latest version of the Az module, open PowerShell as Administrator and run:
 
@@ -62,13 +71,13 @@ Install-Module -Name Az -AllowClobber -Scope AllUsers -Force
 
 Note: The -AllowClobber flag ensures that any existing conflicting modules are overridden.
 
-### 3. Verify Installation-----------------------
+### 3. Verify Installation --
 
 Check if Azure PowerShell is installed successfully:
 
 Get-Module -ListAvailable -Name Az*
 
-### Logging in to Azure---------------------
+### Logging in to Azure --
 
 Once the module is installed, log in to your Azure account using the following command:
 
@@ -76,7 +85,7 @@ Connect-AzAccount
 
 This will prompt a browser-based authentication. After successful login, the active subscription details will be displayed.
 
-### Selecting a Specific Subscription---------------
+### Selecting a Specific Subscription --
 
 If you have multiple subscriptions, list them using:
 
@@ -86,33 +95,26 @@ To select a specific subscription, use:
 
 Set-AzContext -SubscriptionId <your-subscription-id>
 
-### Creating a Resource Group-----------------------------------
-
+### Creating a Resource Group using Azure Powershell --
 A resource group is a logical container for Azure resources. To create one, use the following command:
 
 New-AzResourceGroup -Name "ChotaDon" -Location "CentralIndia"
 
 Replace myResourceGroup with your preferred name and EastUS with the desired Azure region.
 
-### Confirm the Resource Group Creation----------------------------
+### Confirm the Resource Group Creation --
 
 To verify that the resource group was created successfully, use:
 
-Get-AzResourceGroup -Name "ChotaDon"
+Get-AzResourceGroup -Name "RG-DKC"
 
-
-### Quickstart: Create a Windows virtual machine in Azure with PowerShell----------------------
+### Quickstart: Create a Windows virtual machine in Azure with PowerShell --
 
 New-AzVm -ResourceGroupName 'ChotaDon' -Name 'ChotaVM' -Location 'centralindia' -Image 'MicrosoftWindowsServer:WindowsServer:2022-datacenter-azure-edition:latest' -VirtualNetworkName 'myVnet1' -SubnetName 'mySubnet' -SecurityGroupName 'myNSG' -PublicIpAddressName 'myPublicIpAddress' -OpenPorts 80,3389
 
+### Deleting a Resource Group (If Needed) --
 
-
-### Deleting a Resource Group (If Needed)---------
-
-Remove-AzResourceGroup -Name "myResourceGroup" -Force
-
-
-
+Remove-AzResourceGroup -Name "RG-DKC" -Force
 
 ### See List in table form---------------
 az group list -o table
