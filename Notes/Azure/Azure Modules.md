@@ -1,6 +1,6 @@
 ## Azure Resource Group Creation
 
-#### Objective: This assignment will help you understand how to create an Azure Resource Group using both the Azure Portal and Azure CLI. By the end of this exercise, you should be comfortable working with Azure Resource Groups through different methods.
+**Objective:** This assignment will help you understand how to create an Azure Resource Group using both the Azure Portal and Azure CLI. By the end of this exercise, you should be comfortable working with Azure Resource Groups through different methods.
 
 Part 1: Login to Azure Portal
 Open your web browser and go to Azure Portal.
