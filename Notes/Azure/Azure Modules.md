@@ -23,7 +23,7 @@ Verify the successful creation of the Resource Group by navigating back to the R
 ### i. Azure CLI Module --
 Install Azure CLI and Create a Resource Group Using CLI
 Install Azure CLI:
-we can download and install Azure CLI in different methods:
+we can download and install Azure CLI with different methods:
 a) Microsoft Installer (MSI)
 b) WinGet (Windows Package Manager)
 c) Microsoft Installer (MSI) with PowerShell
@@ -68,7 +68,9 @@ az vm delete -g RG-DKC -n MyWinVm
 
 ### ii. Azure PowerShell Module --
 
-Installing Azure PowerShell Module
+We are Installing Azure PowerShell Module with two different methods:
+a) The MSI package for Azure PowerShell
+b) PowerShell Gallery
 
 Azure PowerShell can be installed via PowerShell Gallery. Follow these steps:
 
