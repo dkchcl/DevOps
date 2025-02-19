@@ -145,6 +145,18 @@ az resource list -o table
 ## Rest API --
 PUT https://management.azure.com/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}?api-version=2021-04-01
 
+#### URI Parameters
+resourceGroupName
+subscriptionId	
+api-version	
+#### Request Body
+location
+managedBy
+properties
+tags
+
+#### Security
+azure_auth
 
 
 
