@@ -31,9 +31,9 @@ d) ZIP Package
 
 Download and install the Azure CLI from Azure CLI Installation Guide.
 Verify installation by running the following command in the terminal:
-
+```powershell
 az --version
-
+```
 Login to Azure using CLI:
 
 Open a terminal or command prompt and run:
