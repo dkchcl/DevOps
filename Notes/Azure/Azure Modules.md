@@ -146,9 +146,9 @@ az resource list -o table
 PUT https://management.azure.com/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}?api-version=2021-04-01
 
 #### URI Parameters
-resourceGroupName
-subscriptionId	
-api-version	
+resourceGroupName  = RG-DKC1
+subscriptionId	= f85ee25f-ffbe-4145-896a-4a245999982e
+api-version	= 2021-10-01
 #### Request Body
 location
 managedBy
