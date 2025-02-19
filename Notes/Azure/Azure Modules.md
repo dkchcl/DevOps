@@ -1,4 +1,4 @@
-### Azure Resource Group Creation
+## Azure Resource Group Creation
 
 #### Objective: This assignment will help you understand how to create an Azure Resource Group using both the Azure Portal and Azure CLI. By the end of this exercise, you should be comfortable working with Azure Resource Groups through different methods.
 
@@ -19,6 +19,7 @@ Click Review + Create and then Create to deploy the Resource Group.
 Verify the successful creation of the Resource Group by navigating back to the Resource Groups section.
 
 ## Part 3: Create a Resource Group Using Azure CLI & Azure Powershell
+
 ### i. Azure CLI Module --
 Install Azure CLI and Create a Resource Group Using CLI
 Install Azure CLI:
@@ -47,9 +48,18 @@ Verify the creation by running:
 
 az group list --output table   or    az group list -o table
 
-### Delete a Resource Group --
+#### Delete a Resource Group --
 
 az group delete -n RG-DKC
+
+#### Create VM Using Azure CLI --
+
+az vm create -n MyWinVm -g RG-DKC --public-ip-address "" --image Win2019Datacenter
+
+#### Delete VM Using Azure CLI --
+
+az vm delete -g RG-DKC -n MyWinVm
+
 
 ### ii. Azure PowerShell Module --
 
@@ -121,9 +131,7 @@ az group list -o table
 az account list -o table
 az resource list -o table
 
-az vm create -n MyWinVm -g RG-DKC --public-ip-address "" --image Win2019Datacenter
 
-az vm delete -g RG-DKC -n MyWinVm
 az group delete -n RG-DKC
 
 
