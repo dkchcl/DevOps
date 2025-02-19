@@ -1,11 +1,12 @@
 ### Azure Resource Group Creation
 
-Objective: This assignment will help you understand how to create an Azure Resource Group using both the Azure Portal and Azure CLI. By the end of this exercise, you should be comfortable working with Azure Resource Groups through different methods.
+#### Objective: This assignment will help you understand how to create an Azure Resource Group using both the Azure Portal and Azure CLI. By the end of this exercise, you should be comfortable working with Azure Resource Groups through different methods.
 
 Part 1: Login to Azure Portal
 Open your web browser and go to Azure Portal.
 Use the credentials provided by your Group Leads to sign in.
 Ensure that you have the necessary permissions to create resources.
+
 Part 2: Create a Resource Group Using Azure Portal
 In the Azure Portal, search for Resource Groups in the top search bar and select it.
 Click on the + Create button to create a new Resource Group.
@@ -16,7 +17,9 @@ Region: Select the region closest to your users or application needs.
 Explore and read about all the available options while creating the Resource Group.
 Click Review + Create and then Create to deploy the Resource Group.
 Verify the successful creation of the Resource Group by navigating back to the Resource Groups section.
-Part 3: Install Azure CLI and Create a Resource Group Using CLI
+
+### Part 3: Create a Resource Group Using Azure CLI & Azure Powershell
+1. Install Azure CLI and Create a Resource Group Using CLI
 Install Azure CLI:
 
 Download and install the Azure CLI from Azure CLI Installation Guide.
