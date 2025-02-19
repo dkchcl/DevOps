@@ -142,7 +142,8 @@ az account list -o table
 
 az resource list -o table
 
-
+## Rest API --
+PUT https://management.azure.com/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}?api-version=2021-04-01
 
 
 
