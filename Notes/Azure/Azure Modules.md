@@ -108,7 +108,7 @@ Set-AzContext -SubscriptionId <your-subscription-id>
 ### Creating a Resource Group using Azure Powershell --
 A resource group is a logical container for Azure resources. To create one, use the following command:
 
-New-AzResourceGroup -Name "ChotaDon" -Location "CentralIndia"
+New-AzResourceGroup -Name "RG-DKC" -Location "CentralIndia"
 
 Replace myResourceGroup with your preferred name and EastUS with the desired Azure region.
 
@@ -120,19 +120,20 @@ Get-AzResourceGroup -Name "RG-DKC"
 
 ### Quickstart: Create a Windows virtual machine in Azure with PowerShell --
 
-New-AzVm -ResourceGroupName 'ChotaDon' -Name 'ChotaVM' -Location 'centralindia' -Image 'MicrosoftWindowsServer:WindowsServer:2022-datacenter-azure-edition:latest' -VirtualNetworkName 'myVnet1' -SubnetName 'mySubnet' -SecurityGroupName 'myNSG' -PublicIpAddressName 'myPublicIpAddress' -OpenPorts 80,3389
+New-AzVm -ResourceGroupName 'RG-DKC' -Name 'MotaVM1' -Location 'centralindia' -Image 'MicrosoftWindowsServer:WindowsServer:2022-datacenter-azure-edition:latest' -VirtualNetworkName 'myVnet1' -SubnetName 'mySubnet1' -SecurityGroupName 'myNSG1' -PublicIpAddressName 'myPublicIpAddress1' -OpenPorts 80,3389
 
 ### Deleting a Resource Group (If Needed) --
 
 Remove-AzResourceGroup -Name "RG-DKC" -Force
 
 ### See List in table form---------------
+
 az group list -o table
+
 az account list -o table
+
 az resource list -o table
 
-
-az group delete -n RG-DKC
 
 
 
