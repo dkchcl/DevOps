@@ -1,6 +1,6 @@
 ## Azure Resource Group Creation --
 
-**Objective:** This assignment will help you understand how to create an Azure Resource Group using both the Azure Portal and Azure CLI. By the end of this exercise, you should be comfortable working with Azure Resource Groups through different methods.
+**Objective:** A resource group is a logical container for Azure resources. we will understand how to create an Azure Resource Group using both the Azure Portal and Azure CLI. By the end of this exercise, we could be comfortable working with Azure Resource Groups through different methods.
 
 ### 1: Create a Resource Group Using Azure Portal
 
@@ -17,11 +17,11 @@ Click on the + Create button to create a new Resource Group.
 
 Fill in the required details:
 
-Subscription: Select the appropriate subscription.
+**Subscription:** Select the appropriate subscription.
 
-Resource Group Name: Choose a unique name for your Resource Group.
+**Resource Group Name:** Choose a unique name for your Resource Group.
 
-Region: Select the region closest to your users or application needs.
+**Region:** Select the region closest to your users or application needs.
 
 Explore and read about all the available options while creating the Resource Group.
 
