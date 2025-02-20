@@ -167,7 +167,7 @@ api-version     =  2024-11-01
  
 **4.	Authorization**
 
-Type -- Bearer Token|          -        Token (Token)
+Type -- Bearer Token|          =        Token (Token)
 
 Find Token: 
 ```powershell
