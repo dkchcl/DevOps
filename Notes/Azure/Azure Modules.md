@@ -147,6 +147,7 @@ az resource list -o table
 Prerequisites: Download Postman - https://www.postman.com/downloads/
 
 **1.**	CLI/Power shell login and find the subscription id.
+
 **Example-**
 ```powershell
 az account list --output table
@@ -155,18 +156,26 @@ az account list --output table
 f85ee25f-ffbe-4145-896a-4a245999982e
 ```
 **2.	Postman**
+
 Put https://management.azure.com/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups<resourcegroupname>?api-version=2024-11-01
 
 Example: https://management.azure.com/subscriptions/f85ee25f-ffbe-4145-896a-4a245999982e/resourceGroups/dineshapirg?api-version=2024-11-01
+
 **3.	Params** 
+
 api-version       2024-11-01
  
 **4.	Authorization**
+
 Type ---Bearer Token| <Token>
-Find Token: az account get-access-token --query accessToken --output tsv
+Find Token: 
+```powershell
+az account get-access-token --query accessToken --output tsv
+```
 **Example:** eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImltaTBZMnowZFlLeEJ0dEFxS19UdDVoWUJUayIsImtpZCI6ImltaTBZMnowZFlLeEJ0dEFxS19UdDVoWUJUayJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuY29yZS53aW5kb3dzLm5ldC8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8xNmI4MDUzNC0wOTdjLTRiNWEtOWZhYi1mN2NiMzE4NTgxNjAvIiwiaWF0IjoxNzQwMDMwODQyLCJuYmYiOjE3NDAwMzA4NDIsImV4cCI6MTc0MDAzNTY0NiwiYWNyIjoiMSIsImFpbyI6IkFWUUFxLzhaQUFBQTNOSU1xLzg1V1lOeWxDbXl5aDdTRVdxWXlZTzlnZVNsaU83enVJNm9mT0VIcmhqVDZpV1F0NHVITWdDOWJyUXFpak0zaWJTcllUclNLLzRYb0V1NllSV05hK0lYZFhhWjV0bHM0dWhHQ1ZzPSIsImFtciI6WyJwd2QiLCJtZmEiXSwiYXBwaWQiOiIwNGIwNzc5NS04ZGRiLTQ2MWEtYmJlZS0wMmY5ZTFiZjdiNDYiLCJhcHBpZGFjciI6IjAiLCJncm91cHMiOlsiNzY4NTg5ZGItYTFmOC00M2QwLTk2OTgtODU1MWQzNDBkMTg3Il0sImlkdHlwIjoidXNlciIsImlwYWRkciI6IjYxLjk1LjE5OS4xMzgiLCJuYW1lIjoiRGluZXNoIEt1bWFyIiwib2lkIjoiYWZkNDUxYzAtM2EyMi00ZjQxLTk2ZjQtOTRmODc4NzRkNGZiIiwicHVpZCI6IjEwMDMyMDA0NDlGNjkyREUiLCJwd2RfdXJsIjoiaHR0cHM6Ly9wb3J0YWwubWljcm9zb2Z0b25saW5lLmNvbS9DaGFuZ2VQYXNzd29yZC5hc3B4IiwicmgiOiIxLkFjWUFOQVc0Rm53SldrdWZxX2ZMTVlXQllFWklmM2tBdXRkUHVrUGF3ZmoyTUJQR0FNckdBQS4iLCJzY3AiOiJ1c2VyX2ltcGVyc29uYXRpb24iLCJzaWQiOiIwMDIxOTlhOS05ODNjLTliOGQtNjVlMy02MzdhMTk0YzA1NjQiLCJzdWIiOiJTM3RsQ25OZDdoaDg2S0lxUkpFQ0VKLWVVMVljTlpYQnozc3pKRGtBZkNFIiwidGlkIjoiMTZiODA1MzQtMDk3Yy00YjVhLTlmYWItZjdjYjMxODU4MTYwIiwidW5pcXVlX25hbWUiOiJEaW5lc2hAcm9oaXRrYXVyYXYyNWdtYWlsLm9ubWljcm9zb2Z0LmNvbSIsInVwbiI6IkRpbmVzaEByb2hpdGthdXJhdjI1Z21haWwub25taWNyb3NvZnQuY29tIiwidXRpIjoiRVFjMEhLa2N6a1d3VEhqajJma1lBQSIsInZlciI6IjEuMCIsIndpZHMiOlsiYjc5ZmJmNGQtM2VmOS00Njg5LTgxNDMtNzZiMTk0ZTg1NTA5Il0sInhtc19jYWUiOiIxIiwieG1zX2NjIjpbIkNQMSJdLCJ4bXNfZmlsdGVyX2luZGV4IjpbIjE5OCJdLCJ4bXNfaWRyZWwiOiIxIDQiLCJ4bXNfcmQiOiIwLjQyTGpZQlJpT3NZSUFBIiwieG1zX3NzbSI6IjEiLCJ4bXNfdGNkdCI6MTczOTI5MjA4NH0.FEtZVPPeyMC8QRG34UMFuVNKZ0oPi1RpKWMgEUyC4k0--gb4VH70n3pgx-7jW7njYmTzjtTnmCt3Hr5pLaR1MwCitTkhD1wkReB51q4plOE6zxkm00LKkdwxXkg-U_YgCkw5e8v08l4-FqajqhjJEjUV-JKREC6IveG6WSZwbAykdu93IodLysVH3l2zy0mat9NzKUvdj4mSh7Ci-ulYFEMwq08tNLSrge39aARk_lo_flpkn8ZBFqjKn-_xyLDSMojUpA9X2cs2V16BGPjqNrS0a-FRxvFZytQYXnf7WBBCyXVSn6uiHV8mvkdwlHvyrLZUzFZ2uUUQ38OeJNi7RA 
  
 **5.	Headers**
+
 Authorization              Bearer <token>
 Content-Type              application/json
 
