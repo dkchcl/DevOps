@@ -163,11 +163,11 @@ Example: https://management.azure.com/subscriptions/f85ee25f-ffbe-4145-896a-4a24
 
 **3.	Params** 
 
-api-version       2024-11-01
+api-version     =  2024-11-01
  
 **4.	Authorization**
 
-Type --- Bearer Token| <Token>
+Type -- Bearer Token|          -        Token <Token>
 
 Find Token: 
 ```powershell
@@ -177,9 +177,9 @@ az account get-access-token --query accessToken --output tsv
  
 **5.	Headers**
 
-Authorization              Bearer <token>
+Authorization      =        Bearer <token>
 
-Content-Type               application/json
+Content-Type       =        application/json
 
 **6.	body** 
 ```powershell
