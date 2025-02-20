@@ -167,7 +167,7 @@ api-version     =  2024-11-01
  
 **4.	Authorization**
 
-Type -- Bearer Token|          -        Token <Token>
+Type -- Bearer Token|          -        Token (Token)
 
 Find Token: 
 ```powershell
@@ -177,7 +177,7 @@ az account get-access-token --query accessToken --output tsv
  
 **5.	Headers**
 
-Authorization      =        Bearer <token>
+Authorization      =        Bearer (token)
 
 Content-Type       =        application/json
 
