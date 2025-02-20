@@ -143,7 +143,9 @@ az account list -o table
 az resource list -o table
 
 ### iii. Rest API --
-#### Resource group created by RestApi/POSTMAN:
+#### Resource group created by RestApi/POSTMAN --
+
+#### Using POSTMAN:
 Prerequisites: Download Postman - https://www.postman.com/downloads/
 
 **1.**	CLI/Power shell login and find the subscription id.
