@@ -145,7 +145,7 @@ az resource list -o table
 ### iii. Rest API --
 #### Resource group created by RestApi/POSTMAN --
 
-#### Using POSTMAN:
+#### a) Using POSTMAN:
 Prerequisites: Download Postman - https://www.postman.com/downloads/
 
 **1.**	CLI/Power shell login and find the subscription id.
@@ -194,21 +194,21 @@ Content-Type       =        application/json
 }
 ```
  
-**7.	Result -**
+**Result -**
  
 Go to Azure Portal and check Resource Group 
 
-What is Postman?
+**What is Postman?**
 Postman is a powerful API development tool that helps developers test, debug, and document APIs effortlessly.
 It's widely used for sending API requests, automating tests, and collaborating on API development.
 Think of it as a browser for APIs, where you can send requests (GET, POST, PUT, DELETE) and see responses without writing a single line of code.
 
-Working with APIs
+**Working with APIs**
 🔹 Authorization – Set API keys, OAuth, or Bearer Tokens
 🔹 Headers & Body – Add request headers & JSON body
 
 
-### Resource group created by RestApi:
+### b) Resource group create by RestApi:
 
 ```powershell
 az login
@@ -244,7 +244,6 @@ $apiVersion = "2020-06-01"
 ```powershell
 $apiUrl = "https://management.azure.com/subscriptions/086881a8-7090-4e5f-bf0d-57a5d2ab4aa5/resourcegroups/satyargrestapi?api-version=2020-06-01"
 ```
-
 #### 4️. Set headers with the token
 ```powershell
 $headers = @{
@@ -252,11 +251,6 @@ $headers = @{
     "Content-Type"  = "application/json"
 }
 ```
-
-
-
-
-
 #### 5️. Define the request body
 ```powershell
 $body = @{
@@ -275,7 +269,7 @@ try {
     }
 }
 ```
-Result:
+**Result:**
 ```powershell
 Resource Group Created Successfully: {
     "id":  "/subscriptions/086881a8-7090-4e5f-bf0d-57a5d2ab4aa5/resourceGroups/satyapsap9i",
