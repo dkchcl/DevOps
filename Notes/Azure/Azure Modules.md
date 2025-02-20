@@ -167,7 +167,7 @@ api-version       2024-11-01
  
 **4.	Authorization**
 
-Type ---Bearer Token| <Token>
+Type --- Bearer Token| <Token>
 
 Find Token: 
 ```powershell
@@ -182,6 +182,7 @@ Authorization              Bearer <token>
 Content-Type               application/json
 
 **6.	body** 
+```powershell
 {
     "location": "eastus",
     "tags": {
@@ -189,7 +190,7 @@ Content-Type               application/json
         "owner":  "dineshapirg"
     }
 }
-
+```
  
 **7.	Result -**
  
