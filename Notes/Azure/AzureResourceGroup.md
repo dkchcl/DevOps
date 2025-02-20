@@ -274,13 +274,13 @@ $token = az account get-access-token --query accessToken --output tsv
 #### 2️. Define required variables
 ```powershell
 $subscriptionId = "086881a8-7090-4e5f-bf0d-57a5d2ab4aa5"
-$resourceGroupName = "satyargrestapi"
+$resourceGroupName = "dineshrgrestapi"
 $location = "westus"
 $apiVersion = "2020-06-01"
 ```
 #### 3️. Set API URL with the correct subscription ID and resource group name
 ```powershell
-$apiUrl = "https://management.azure.com/subscriptions/086881a8-7090-4e5f-bf0d-57a5d2ab4aa5/resourcegroups/satyargrestapi?api-version=2020-06-01"
+$apiUrl = "https://management.azure.com/subscriptions/086881a8-7090-4e5f-bf0d-57a5d2ab4aa5/resourcegroups/dineshrgrestapi?api-version=2020-06-01"
 ```
 #### 4️. Set headers with the token
 ```powershell
