@@ -10,7 +10,7 @@
 ```powershell
 az account show
 ```
-**Using Azure CLI:**
+**Using Azure Powershell:**
 
 Creating a container in an Azure Storage Account using PowerShell is a straightforward process. Here’s a step-by-step guide to help you:
 
