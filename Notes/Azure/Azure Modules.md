@@ -147,7 +147,8 @@ az resource list -o table
 Prerequisites: Download Postman - https://www.postman.com/downloads/
 
 1.	CLI/Power shell login and find the subscription id
-**Example-** ```powershell
+**Example-**
+```powershell
 az account list --output table
 ```
 f85ee25f-ffbe-4145-896a-4a245999982e
