@@ -1,4 +1,5 @@
 ##Run the Azure CLI 
+
 ##Run the Azure CLI After installation, close and reopen any active terminal window. Run the Azure CLI with the az command from either Windows Command Prompt or PowerShell. A common first step is to check your active subscription. 
 ```powershell
 az account show
