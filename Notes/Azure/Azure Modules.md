@@ -206,6 +206,86 @@ Working with APIs
 🔹 Headers & Body – Add request headers & JSON body
 
 
+### Resource group created by RestApi
+
+```powershell
+az login
+az account show --output table
+az group list --output table
+az account list --output table
+```
+```powershell
+PS C:\Users\hp> az account list --output table
+```
+```powershell
+Name        CloudName    SubscriptionId                        TenantId                              State    IsDefault
+----------  -----------  ------------------------------------  ------------------------------------  -------  -----------
+Free Trial  AzureCloud   086881a8-7090-4e5f-bf0d-57a5d2ab4aa5  37757ac0-7db0-4d6c-976f-d5eb3c7ad24e  Enabled  True
+```
+
+Find Token: 
+```powershell
+az account get-access-token --query accessToken --output tsv
+```
+# 1Get authentication token
+```powershell
+$token = az account get-access-token --query accessToken --output tsv
+```
+# 2️ Define required variables
+```powershell
+$subscriptionId = "086881a8-7090-4e5f-bf0d-57a5d2ab4aa5"
+$resourceGroupName = "satyargrestapi"
+$location = "westus"
+$apiVersion = "2020-06-01"
+```
+# 3️ Set API URL with the correct subscription ID and resource group name
+```powershell
+$apiUrl = "https://management.azure.com/subscriptions/086881a8-7090-4e5f-bf0d-57a5d2ab4aa5/resourcegroups/satyargrestapi?api-version=2020-06-01"
+```
+
+# 4️ Set headers with the token
+```powershell
+$headers = @{
+    "Authorization" = "Bearer $token"
+    "Content-Type"  = "application/json"
+}
+```
+
+
+
+
+
+# 5️ Define the request body
+```powershell
+$body = @{
+    "location" = $location
+} | ConvertTo-Json -Depth 10
+```
+# 6️ Invoke REST API to create the resource group
+```powershell
+try {
+    $response = Invoke-RestMethod -Uri $apiUrl -Method Put -Headers $headers -Body $body
+    Write-Output "Resource Group Created Successfully: $($response | ConvertTo-Json -Depth 10)"
+} catch {
+    Write-Output "Error: $($_.Exception.Message)"
+    if ($_.ErrorDetails) {
+        Write-Output "Details: $($_.ErrorDetails.Message)"
+    }
+}
+```
+Result:
+```powershell
+Resource Group Created Successfully: {
+    "id":  "/subscriptions/086881a8-7090-4e5f-bf0d-57a5d2ab4aa5/resourceGroups/satyapsap9i",
+    "name":  "satyapsap9i",
+    "type":  "Microsoft.Resources/resourceGroups",
+    "location":  "westus",
+    "properties":  {
+                       "provisioningState":  "Succeeded"
+                   }
+}
+```
+
 
 
 
