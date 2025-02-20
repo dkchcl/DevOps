@@ -197,7 +197,21 @@ Content-Type       =        application/json
 ```
  
 **Result -**
- 
+```powershell
+ {
+    "id": "/subscriptions/f85ee25f-ffbe-4145-896a-4a245999982e/resourceGroups/dineshapirg",
+    "name": "dineshapirg",
+    "type": "Microsoft.Resources/resourceGroups",
+    "location": "eastus",
+    "tags": {
+        "environment": "developer",
+        "owner": "dineshapirg"
+    },
+    "properties": {
+        "provisioningState": "Succeeded"
+    }
+}
+```
 Go to Azure Portal and check Resource Group 
 
 **What is Postman?**
