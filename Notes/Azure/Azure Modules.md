@@ -143,24 +143,51 @@ az account list -o table
 az resource list -o table
 
 ### iii. Rest API --
-PUT https://management.azure.com/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}?api-version=2021-04-01
+#### Resource group created by RestApi/POSTMAN:
+Prerequisites: Download Postman - https://www.postman.com/downloads/
 
-#### URI Parameters
-resourceGroupName  = RG-DKC1
-subscriptionId	= f85ee25f-ffbe-4145-896a-4a245999982e
-api-version	= 2021-10-01
-#### Request Body
-location
-managedBy
-properties
-tags
+1.	CLI/Power shell login and find the subscription id
+Example- az account list --output table
+f85ee25f-ffbe-4145-896a-4a245999982e
 
-#### Security
-azure_auth
-Azure Active Directory OAuth2 Flow
-Type: oauth2
-Flow: implicit
-Authorization URL: https://login.microsoftonline.com/common/oauth2/authorize
+2.	Postman
+Put https://management.azure.com/subscriptions/YOUR_SUBSCRIPTION_ID/resourceGroups<resourcegroupname>?api-version=2021-10-01
+
+Example: https://management.azure.com/subscriptions/f85ee25f-ffbe-4145-896a-4a245999982e/resourceGroups/dineshapirg?api-version=2021-10-01
+3.	Params 
+api-version       2021-10-01
+ 
+4.	Authorization
+Type ---Bearer Token| <Token>
+Find Token: az account get-access-token --query accessToken --output tsv
+Example: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImltaTBZMnowZFlLeEJ0dEFxS19UdDVoWUJUayIsImtpZCI6ImltaTBZMnowZFlLeEJ0dEFxS19UdDVoWUJUayJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuY29yZS53aW5kb3dzLm5ldC8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9hZWQyYzQ3ZC1jYjM0LTRlMjgtYmU2OS0yOGJhNTc1ZjNkMGEvIiwiaWF0IjoxNzM5ODMyMTU0LCJuYmYiOjE3Mzk4MzIxNTQsImV4cCI6MTczOTgzNzE1MiwiYWNyIjoiMSIsImFpbyI6IkFXUUFtLzhaQUFBQWFQMVJqVngvTjUvWEx1ZHFhK296eXRVTGJYMlUxaDJKYXgxNE8vZlJvOUx1a25GaU5QK2dlNGdBMjkvcDc4WlFJdkE1bnA2cVVmTytSQzVHbDhldGJVcTFqQk5uaGNXaFFhZGVjNTJYeFYwaGc4cUdmVXdxQ2dYNWNmeDd5V3hXIiwiYWx0c2VjaWQiOiIxOmxpdmUuY29tOjAwMDNCRkZFOTA4OTg3MjQiLCJhbXIiOlsicHdkIl0sImFwcGlkIjoiMDRiMDc3OTUtOGRkYi00NjFhLWJiZWUtMDJmOWUxYmY3YjQ2IiwiYXBwaWRhY3IiOiIwIiwiZW1haWwiOiJjbG91ZC5zYW5qYXlzaW5naEBnbWFpbC5jb20iLCJmYW1pbHlfbmFtZSI6IlNpbmdoIiwiZ2l2ZW5fbmFtZSI6IlNhbmpheSIsImdyb3VwcyI6WyJlNDQ1YTE3MS03NjVkLTQxMWYtYmQyZi02YWI5Y2UwZmQ1NTIiXSwiaWRwIjoibGl2ZS5jb20iLCJpZHR5cCI6InVzZXIiLCJpcGFkZHIiOiIyNDAxOjQ5MDA6MWM2NjplMzVlOjFjMzA6NWVjYzo4ZDkxOjU5OGMiLCJuYW1lIjoiU2 
+ 
+5.	Headers
+Authorization              Bearer <token>
+Content-Type              application/json
+
+6.	body 
+{
+    "location": "eastus",
+    "tags": {
+        "environment": "developer",
+        "owner":  "satyasin"
+    }
+}
+
+ 
+7.	Result -
+ 
+Go to Azure Portal and check Resource Group 
+
+What is Postman?
+Postman is a powerful API development tool that helps developers test, debug, and document APIs effortlessly.
+It's widely used for sending API requests, automating tests, and collaborating on API development.
+Think of it as a browser for APIs, where you can send requests (GET, POST, PUT, DELETE) and see responses without writing a single line of code.
+
+Working with APIs
+🔹 Authorization – Set API keys, OAuth, or Bearer Tokens
+🔹 Headers & Body – Add request headers & JSON body
 
 
 
