@@ -32,9 +32,9 @@ Verify the successful creation of the Resource Group by navigating back to the R
 ### 2: Create a Resource Group Using Azure CLI, Azure Powershell & Azure RestApi:
 
 ### i. Azure CLI Module --
-Install Azure CLI and Create a Resource Group Using CLI
+**Install Azure CLI and Create a Resource Group Using CLI**
 
-Install Azure CLI:
+**Install Azure CLI:**
 
 we can download and install Azure CLI with different methods:
 
@@ -59,7 +59,9 @@ Open a terminal or command prompt and run:
 az login
 ```
 A browser window will open asking you to log in to your Azure account. Use the credentials provided by your Group Leads.
+
 After successful login, the CLI will display the list of available subscriptions.
+
 Create a Resource Group using CLI:
 
 #### Run the following command to create a new Resource Group named RG-DKC:
@@ -88,7 +90,9 @@ az vm delete -g RG-DKC -n MyWinVm
 ### ii. Azure PowerShell Module --
 
 We are Installing Azure PowerShell Module with two different methods:
+
 a) The MSI package for Azure PowerShell
+
 b) PowerShell Gallery
 
 Azure PowerShell can be installed via PowerShell Gallery. Follow these steps:
