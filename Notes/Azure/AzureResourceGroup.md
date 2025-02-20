@@ -12,13 +12,21 @@ Ensure that you have the necessary permissions to create resources.
 
 **Steps:**
 In the Azure Portal, search for Resource Groups in the top search bar and select it.
+
 Click on the + Create button to create a new Resource Group.
+
 Fill in the required details:
+
 Subscription: Select the appropriate subscription.
+
 Resource Group Name: Choose a unique name for your Resource Group.
+
 Region: Select the region closest to your users or application needs.
+
 Explore and read about all the available options while creating the Resource Group.
+
 Click Review + Create and then Create to deploy the Resource Group.
+
 Verify the successful creation of the Resource Group by navigating back to the Resource Groups section.
 
 ### 2: Create a Resource Group Using Azure CLI, Azure Powershell & Azure RestApi:
