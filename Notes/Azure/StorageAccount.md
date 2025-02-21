@@ -2,7 +2,7 @@
 
 ### Azure Storage Account:
 
-**Using Azure CLI:**
+#### Using Azure CLI:
 
 #Download & Run the Azure CLI. 
 
@@ -29,7 +29,11 @@ tandard_LRS
 
 Successfully created.
 
-**Using Azure Powershell:**
+**Create Azure Containers within Storage Account:**
+
+
+
+#### Using Azure Powershell:
 
 Creating a container in an Azure Storage Account using PowerShell is a straightforward process. Here’s a step-by-step guide to help you:
 
@@ -49,7 +53,7 @@ New-AzResourceGroup -Name "myResourceGroup" -Location "EastUS"
 ```powershell
 New-AzStorageAccount -ResourceGroupName "myResourceGroup" -Name "mystorageaccount" -Location "EastUS" -SkuName "Standard_LRS"
 ```
-### Create Azure Containers within Storage Account --
+**Create Azure Containers within Storage Account --**
 
 Create a Container Now, you can create a container within your storage account:
 
