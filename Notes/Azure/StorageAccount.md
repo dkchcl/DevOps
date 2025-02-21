@@ -4,23 +4,21 @@
 
 **Using Azure CLI:**
 
-#Run the Azure CLI 
+#Download & Run the Azure CLI. 
 
-#Run the Azure CLI After installation, close and reopen any active terminal window. Run the Azure CLI with the az command from either Windows Command Prompt or PowerShell. A common first step is to check your active subscription. 
-```powershell
-az account show
-```
-**Step 1:** Install Azure PowerShell Module If you haven't already installed the Azure PowerShell module, you can do so by running the following command:
-```powershell
-I
-```
-**Step 2:** Connect to Your Azure Account You need to authenticate to your Azure account:
+#Run the Azure CLI After installation, close and reopen any active terminal window. Run the Azure CLI with the az command from either Windows Command Prompt or PowerShell. 
+
+**Step 1:** Connect to Your Azure Account You need to authenticate to your Azure account:
 ```powershell
 az login 
 ```
+**Step 2:** A common first step is to check your active subscription. 
+```powershell
+az account show
+```
 **Step 3:** Create a Resource Group (if needed) If you don't already have a resource group, you can create one:
 ```powershell
-az group create -Name myResourceGroup -Location EastUS 
+az group create -Name dineshapirgnew -Location EastUS 
 ```
 **Step 4:** Create a Storage Account (if needed) If you don't already have a storage account, you can create one:
 ```powershell
@@ -28,6 +26,7 @@ az storage account create --name dineshstorage4321 --resource-group dineshapirgn
 tandard_LRS
 ```
 **Result:**
+
 Successfully created.
 
 **Using Azure Powershell:**
