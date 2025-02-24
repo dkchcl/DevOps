@@ -2,13 +2,17 @@
 
 
 
-
+```powershell
 docker pull nginx
-
+```
+```powershell
 docker run --help
-Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
-docker run --detach --name dineshold_pc nginx
+```
 
+Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+```powershell
+docker run --detach --name dineshold_pc nginx
+```
 
 
 
