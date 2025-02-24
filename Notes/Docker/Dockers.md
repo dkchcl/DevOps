@@ -1,8 +1,13 @@
+## Docker:
 
 
 
 
+docker pull nginx
 
+docker run --help
+Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+docker run --detach --name dineshold_pc nginx
 
 
 
