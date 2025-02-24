@@ -76,35 +76,38 @@ a15a58e7dbd04e303b1c854261c5d88544a0241bad4bac30e0d89035af33cc1c   nginx     "/d
 499a3a630743d7db57b8cd9a4a5471e87c827506c615cfe49dbe5d4853523ade   nginx     "/docker-entrypoint.sh nginx -g 'daemon off;'"   9 minutes ago   Up 9 minutes   80/tcp    dineshold_pc
 ```
 
-### Uses to go in Container using Linux Command:
+### Syntax to go in Container using Linux Command:
 
 Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
 
+**Example:**
+```powershell
 docker exec -i -t dineshold_pc bash
-
-
-
-
-
+docker exec -i -t dineshold_pc ls
+docker exec -i -t dineshold_pc sh
+```
 
 
 
 ### Remove unused data:
-
+```powershell
 docker system prune --help
-
+```
 Usage:  docker system prune [OPTIONS]
 
 Remove unused data
-
+```powershell
 Options:
   -a, --all             Remove all unused images not just dangling ones
       --filter filter   Provide filter values (e.g. "label=<key>=<value>")
   -f, --force           Do not prompt for confirmation
       --volumes         Prune anonymous volume
+```
 
-
-
+**Example:**
+```powershell
+docker system prune -a -f 
+```
 
 
 
