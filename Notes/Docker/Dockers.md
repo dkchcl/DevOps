@@ -41,23 +41,39 @@ It provides a straightforward GUI (Graphical User Interface) that lets you manag
 Docker Desktop reduces the time spent on complex setups so you can focus on writing code. It takes care of port mappings, file system concerns, and other default settings, and is regularly updated with bug fixes and security updates.
 
 **What's included in Docker Desktop?**
+
 Docker Engine
+
 Docker CLI client
+
 Docker Scout (additional subscription may apply)
+
 Docker Build
+
 Docker Extensions
+
 Docker Compose
+
 Docker Content Trust
+
 Kubernetes
+
 Credential Helper
 
 **What are the key features of Docker Desktop?**
+
 Ability to containerize and share any application on any cloud platform, in multiple languages and frameworks.
+
 Quick installation and setup of a complete Docker development environment.
+
 Includes the latest version of Kubernetes.
+
 On Windows, the ability to toggle between Linux and Windows containers to build applications.
+
 Fast and reliable performance with native Windows Hyper-V virtualization.
+
 Ability to work natively on Linux through WSL 2 on Windows machines.
+
 Volume mounting for code and data, including file change notifications and easy access to running containers on the localhost network.
 
 **Docker Desktop Installation**
