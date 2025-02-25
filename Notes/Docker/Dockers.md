@@ -2,13 +2,7 @@
 
 **What is Docker?**
 
-What is Docker?
-Docker is an open-source containerization platform by which you can pack your application and all its dependencies into a standardized unit called a container. Containers are light in weight which makes them portable and they are isolated from the underlying infrastructure and from each other container. You can run the docker image as a docker container in any machine where docker is installed without depending on the operating system.
-
-
-
-Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers.
-Docker is a platform designed to help developers build, share, and run container applications. We handle the tedious setup, so you can focus on the code.
+Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. Docker is a platform designed to help developers build, share, and run container applications. 
 
 1. Docker is an open-source Centralised Plateform, designed to Create, Deploy and run applications.
 2. Docker uses Container on the host OS to run applications, It allows applications to use the same Linux Kernel as a system on the host Computer, rather than creating a whole Virtual OS.
