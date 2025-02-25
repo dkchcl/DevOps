@@ -20,11 +20,15 @@ Docker is a platform designed to help developers build, share, and run container
 8. Docker is a set of Platform as a Service (PaaS) that uses OS Level Virtualization whereas VMware uses Hardware level Virtualization.
    
 **Why Docker is popular?**
+
 Docker gained its popularity due to its impact on the software development and deployment. The following are the some of the main reasons for docker becoming popular:
 
 **Portability:** Docker facilitates the developers in packaging their applications with all dependencies into a single lightweight containers. It facilities in ensuring the consistent performance across the different computing environments.
+
 **Reproducibility:** Through encapsulating the applications with their dependencies within a container it ensures in software setups remaining consistent across the development, testing and production environments.
+
 **Efficiency:** Docker through its container based architecture it optimizes the resource utilization. It allows the developers to run the multiple isolated applications on a single host system.
+
 **Scalability:** Docker’s scalability features facilitated the developers in making easier of their applications handling at time of workloads increment.
 
 
