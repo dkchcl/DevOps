@@ -2,6 +2,11 @@
 
 **What is Docker?**
 
+What is Docker?
+Docker is an open-source containerization platform by which you can pack your application and all its dependencies into a standardized unit called a container. Containers are light in weight which makes them portable and they are isolated from the underlying infrastructure and from each other container. You can run the docker image as a docker container in any machine where docker is installed without depending on the operating system.
+
+
+
 Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers.
 Docker is a platform designed to help developers build, share, and run container applications. We handle the tedious setup, so you can focus on the code.
 
@@ -14,7 +19,19 @@ Docker is a platform designed to help developers build, share, and run container
 7. Docker was first release in March 2013, it is developed by Solomon Hykes and Sebastien Pahl.
 8. Docker is a set of Platform as a Service (PaaS) that uses OS Level Virtualization whereas VMware uses Hardware level Virtualization.
    
+**Why Docker is popular?**
+Docker gained its popularity due to its impact on the software development and deployment. The following are the some of the main reasons for docker becoming popular:
 
+**Portability:** Docker facilitates the developers in packaging their applications with all dependencies into a single lightweight containers. It facilities in ensuring the consistent performance across the different computing environments.
+**Reproducibility:** Through encapsulating the applications with their dependencies within a container it ensures in software setups remaining consistent across the development, testing and production environments.
+**Efficiency:** Docker through its container based architecture it optimizes the resource utilization. It allows the developers to run the multiple isolated applications on a single host system.
+**Scalability:** Docker’s scalability features facilitated the developers in making easier of their applications handling at time of workloads increment.
+
+
+
+
+A Docker container is a standardized, encapsulated environment that runs applications. A container is managed using the Docker API or CLI.
+A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
 
 ```powershell
 docker pull nginx
