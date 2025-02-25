@@ -32,7 +32,7 @@ Docker gained its popularity due to its impact on the software development and d
 A container is simply an isolated process with all of the files it needs to run. If you run multiple containers, they all share the same kernel.
 A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings. A Docker container is a standardized, encapsulated environment that runs applications. A container is managed using the Docker API or CLI.
 
-#### Docker Desktop
+#### Docker Desktop:
 
 Docker Desktop is a one-click-install application for your Mac, Linux, or Windows environment that lets you build, share, and run containerized applications and microservices.
 
@@ -60,10 +60,23 @@ Fast and reliable performance with native Windows Hyper-V virtualization.
 Ability to work natively on Linux through WSL 2 on Windows machines.
 Volume mounting for code and data, including file change notifications and easy access to running containers on the localhost network.
 
+**Docker Desktop Installation**
+Download Docker Setup for windows "Desktop for Windows - x86_64" and install on your windows/ or download linux setup for linux pc.
+
+after installation check docker version--
+
+```powershell
+docker --version
+```
+
+**Download Imager from Docker Hub:**
 
 ```powershell
 docker pull nginx
 ```
+
+### Create a Container:
+
 ```powershell
 docker run --help
 ```
@@ -72,21 +85,6 @@ Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 ```powershell
 docker run --detach --name dineshold_pc nginx
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #### Show containers Details:
 
