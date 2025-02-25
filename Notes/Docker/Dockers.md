@@ -1,4 +1,4 @@
-    ## Docker:
+## Docker:
 
 
 1. Docker is an open-source Centralised Plateform, designed to Create, Deploy and run applications.
