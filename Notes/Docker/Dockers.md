@@ -1,6 +1,7 @@
 ## Docker:
 
 **What is Docker?**
+
     Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers.
 Docker is a platform designed to help developers build, share, and run container applications. We handle the tedious setup, so you can focus on the code.
 
