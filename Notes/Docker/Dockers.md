@@ -32,6 +32,34 @@ Docker gained its popularity due to its impact on the software development and d
 A container is simply an isolated process with all of the files it needs to run. If you run multiple containers, they all share the same kernel.
 A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings. A Docker container is a standardized, encapsulated environment that runs applications. A container is managed using the Docker API or CLI.
 
+#### Docker Desktop
+
+Docker Desktop is a one-click-install application for your Mac, Linux, or Windows environment that lets you build, share, and run containerized applications and microservices.
+
+It provides a straightforward GUI (Graphical User Interface) that lets you manage your containers, applications, and images directly from your machine.
+
+Docker Desktop reduces the time spent on complex setups so you can focus on writing code. It takes care of port mappings, file system concerns, and other default settings, and is regularly updated with bug fixes and security updates.
+
+**What's included in Docker Desktop?**
+Docker Engine
+Docker CLI client
+Docker Scout (additional subscription may apply)
+Docker Build
+Docker Extensions
+Docker Compose
+Docker Content Trust
+Kubernetes
+Credential Helper
+
+**What are the key features of Docker Desktop?**
+Ability to containerize and share any application on any cloud platform, in multiple languages and frameworks.
+Quick installation and setup of a complete Docker development environment.
+Includes the latest version of Kubernetes.
+On Windows, the ability to toggle between Linux and Windows containers to build applications.
+Fast and reliable performance with native Windows Hyper-V virtualization.
+Ability to work natively on Linux through WSL 2 on Windows machines.
+Volume mounting for code and data, including file change notifications and easy access to running containers on the localhost network.
+
 
 ```powershell
 docker pull nginx
