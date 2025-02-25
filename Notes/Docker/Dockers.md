@@ -77,6 +77,7 @@ Ability to work natively on Linux through WSL 2 on Windows machines.
 Volume mounting for code and data, including file change notifications and easy access to running containers on the localhost network.
 
 **Docker Desktop Installation**
+
 Download Docker Setup for windows "Desktop for Windows - x86_64" and install on your windows/ or download linux setup for linux pc.
 
 after installation check docker version--
