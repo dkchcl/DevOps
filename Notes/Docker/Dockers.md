@@ -12,7 +12,7 @@ Docker is a platform designed to help developers build, share, and run container
 5. Docker is a tool that performs OS level Vertualization, also known as Containerization.
 6. Before Docker many users faces the problem that a particular code is running in the developer's system but not in the user's system.
 7. Docker was first release in March 2013, it is developed by Solomon Hykes and Sebastien Pahl.
-8. Docker is a set of Platform as a Service (PAAS) that uses OS Level Virtualization whereas VMware uses Hardware level Virtualization.
+8. Docker is a set of Platform as a Service (PaaS) that uses OS Level Virtualization whereas VMware uses Hardware level Virtualization.
    
 
 
