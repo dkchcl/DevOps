@@ -17,15 +17,15 @@ Docker is a set of platform as a service (PaaS) products that use OS-level virtu
 
 Docker gained its popularity due to its impact on the software development and deployment. The following are the some of the main reasons for docker becoming popular:
 
-**Portability:** Docker facilitates the developers in packaging their applications with all dependencies into a single lightweight containers. It facilities in ensuring the consistent performance across the different computing environments.
+**1. Portability:** Docker facilitates the developers in packaging their applications with all dependencies into a single lightweight containers. It facilities in ensuring the consistent performance across the different computing environments.
 
-**Reproducibility:** Through encapsulating the applications with their dependencies within a container it ensures in software setups remaining consistent across the development, testing and production environments.
+**2. Reproducibility:** Through encapsulating the applications with their dependencies within a container it ensures in software setups remaining consistent across the development, testing and production environments.
 
-**Efficiency:** Docker through its container based architecture it optimizes the resource utilization. It allows the developers to run the multiple isolated applications on a single host system.
+**3. Efficiency:** Docker through its container based architecture it optimizes the resource utilization. It allows the developers to run the multiple isolated applications on a single host system.
 
-**Scalability:** Docker’s scalability features facilitated the developers in making easier of their applications handling at time of workloads increment.
+**4. Scalability:** Docker’s scalability features facilitated the developers in making easier of their applications handling at time of workloads increment.
 
-#### Container:
+### Container:
 
 **what is Container?**
 
@@ -76,7 +76,7 @@ Ability to work natively on Linux through WSL 2 on Windows machines.
 
 Volume mounting for code and data, including file change notifications and easy access to running containers on the localhost network.
 
-**Docker Desktop Installation**
+**Docker Desktop Installation:**
 
 Download Docker Setup for windows "Desktop for Windows - x86_64" and install on your windows/ or download linux setup for linux pc.
 
@@ -86,7 +86,7 @@ after installation check docker version--
 docker --version
 ```
 
-**Download Imager from Docker Hub:**
+**Download Image from Docker Hub to host pc:**
 
 ```powershell
 docker pull nginx
@@ -103,7 +103,7 @@ Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 docker run --detach --name dineshold_pc nginx
 ```
 
-#### Show containers Details:
+#### Show Containers Details:
 
 Show all containers (default shows just running)
 ```powershell
@@ -163,7 +163,7 @@ docker exec -i -t dineshold_pc sh
 
 
 
-### Remove unused data:
+### Remove unused data (Container):
 ```powershell
 docker system prune --help
 ```
