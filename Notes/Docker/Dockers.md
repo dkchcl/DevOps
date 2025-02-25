@@ -26,11 +26,12 @@ Docker gained its popularity due to its impact on the software development and d
 **Scalability:** Docker’s scalability features facilitated the developers in making easier of their applications handling at time of workloads increment.
 
 #### Container:
+
 **what is Container?**
 
+A container is simply an isolated process with all of the files it needs to run. If you run multiple containers, they all share the same kernel.
+A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings. A Docker container is a standardized, encapsulated environment that runs applications. A container is managed using the Docker API or CLI.
 
-A Docker container is a standardized, encapsulated environment that runs applications. A container is managed using the Docker API or CLI.
-A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
 
 ```powershell
 docker pull nginx
