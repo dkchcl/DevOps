@@ -25,7 +25,8 @@ Docker gained its popularity due to its impact on the software development and d
 
 **Scalability:** Docker’s scalability features facilitated the developers in making easier of their applications handling at time of workloads increment.
 
-
+#### Container:
+**what is Container?**
 
 
 A Docker container is a standardized, encapsulated environment that runs applications. A container is managed using the Docker API or CLI.
