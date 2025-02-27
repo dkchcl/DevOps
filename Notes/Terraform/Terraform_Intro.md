@@ -33,4 +33,3 @@
      ```
    - Confirm that Terraform's version is displayed.
   
-To be continued...
