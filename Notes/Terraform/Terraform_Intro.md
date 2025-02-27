@@ -32,7 +32,9 @@
      terraform --version
      ```
    - Confirm that Terraform's version is displayed.
-  
+
+### Visual Studio Code:  
+
 Visual Studio Code (VSCode) is a powerful and lightweight code editor that integrates several features to enhance the development experience. One of its key strengths is how it integrates the **Explorer**, **Editor**, and **Terminal** into a unified workspace. Here’s how these components work together:
 
 ### 1. **Explorer Integration**
