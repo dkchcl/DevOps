@@ -228,7 +228,7 @@ docker container --help
 ```
 Usage:  docker container COMMAND
 ```
-#### Manage containers
+#### Manage containers ---- Commands:
 
 **Commands:**
 
@@ -275,7 +275,6 @@ docker container exec --help
 ```
 docker container export --help
 ```
-
 **inspect**     Display detailed information on one or more containers
   ```
 docker container inspect --help
@@ -310,42 +309,45 @@ docker container rename --help
 ```
 **restart**     Restart one or more containers
 ```
-docker container export --help
+docker container restart --help
 ```
-  rm          Remove one or more containers
-  ```
-docker container export --help
+**rm**          Remove one or more containers
 ```
-  run         Create and run a new container from an image
-  ```
-docker container export --help
+docker container rm --help
 ```
-  start       Start one or more stopped containers
-  ```
-docker container export --help
+**run**         Create and run a new container from an image
 ```
-  stats       Display a live stream of container(s) resource usage statistics
-  ```
-docker container export --help
+docker container run --help
 ```
-  stop        Stop one or more running containers
-  ```
-docker container export --help
+**start**       Start one or more stopped containers
 ```
-  top         Display the running processes of a container
-  ```
-docker container export --help
+docker container start --help
 ```
-  unpause     Unpause all processes within one or more containers
-  ```
-docker container export --help
+**stats**       Display a live stream of container(s) resource usage statistics
 ```
-  update      Update configuration of one or more containers
-  ```
-docker container export --help
+docker container stats --help
 ```
-  wait        Block until one or more containers stop, then print their exit codes
+**stop**        Stop one or more running containers
 ```
+docker container stop --help
+```
+**top**         Display the running processes of a container
+```
+docker container top --help
+```
+**unpause**     Unpause all processes within one or more containers
+```
+docker container unpause --help
+```
+**update**      Update configuration of one or more containers
+```
+docker container update --help
+```
+**wait**        Block until one or more containers stop, then print their exit codes
+```
+docker container wait --help
+```
+
 
   context     Manage contexts
   
