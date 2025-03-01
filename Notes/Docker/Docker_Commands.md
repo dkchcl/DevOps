@@ -356,9 +356,10 @@ docker context --help
 ```
 Usage:  docker context COMMAND
 ```
-Manage contexts
+**Manage contexts**
+
+**Commands:**
 ```
-Commands:
   create      Create a context
   export      Export a context to a tar archive FILE or a tar stream on STDOUT.
   import      Import a context from a tar or zip file
@@ -368,6 +369,8 @@ Commands:
   show        Print the name of the current context
   update      Update a context
   use         Set the current docker context
+```
+
   debug*      Get a shell into any image or container
   
   desktop*    Docker Desktop commands (Beta)
