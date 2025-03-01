@@ -126,9 +126,48 @@ Options:
   -q, --quiet           Only show image IDs
       --tree            List multi-platform images as a tree (EXPERIMENTAL)
 ```
-  login       Authenticate to a registry
-  logout      Log out from a registry
-  search      Search Docker Hub for images
+**login**       Authenticate to a registry
+```
+docker login --help
+```
+```
+Usage:  docker login [OPTIONS] [SERVER]
+```
+```
+Authenticate to a registry.
+Defaults to Docker Hub if no server is specified.
+
+Options:
+  -p, --password string   Password
+      --password-stdin    Take the password from stdin
+  -u, --username string   Username
+```
+
+**logout**      Log out from a registry
+```
+docker logout --help
+```
+```
+Usage:  docker logout [SERVER]
+```
+Log out from a registry.
+If no server is specified, the default is defined by the daemon.  
+
+**search**      Search Docker Hub for images
+```
+docker search --help
+```
+```
+Usage:  docker search [OPTIONS] TERM
+```
+Search Docker Hub for images
+```
+Options:
+  -f, --filter filter   Filter output based on conditions provided
+      --format string   Pretty-print search using a Go template
+      --limit int       Max number of search results
+      --no-trunc        Don't truncate output
+```
   version     Show the Docker version information
   info        Display system-wide information
 
