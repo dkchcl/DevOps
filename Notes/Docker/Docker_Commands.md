@@ -221,7 +221,7 @@ Options:
   
 **5. compose:**     - Docker Compose
   
-#### 6. container:   Manage containers
+### 6. container:   Manage containers
 ```
 docker container --help
 ```
