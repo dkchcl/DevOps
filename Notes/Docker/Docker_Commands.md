@@ -387,7 +387,74 @@ Usage:  docker context COMMAND
   
  15. manifest    Manage Docker image manifests and manifest lists
   
- 16. network     Manage networks
+**16. network:**     - Manage networks
+```
+docker network --help
+```
+```
+Usage:  docker network COMMAND
+```
+**Manage networks**
+
+**Commands:**
+
+**a) connect:**     - Connect a container to a network
+```
+Usage:  docker network connect [OPTIONS] NETWORK CONTAINER
+```
+Connect a container to a network
+```
+Options:
+      --alias strings           Add network-scoped alias for the container
+      --driver-opt strings      driver options for the network
+      --ip string               IPv4 address (e.g., "172.30.100.104")
+      --ip6 string              IPv6 address (e.g., "2001:db8::33")
+      --link list               Add link to another container
+      --link-local-ip strings   Add a link-local address for the container
+  ```
+
+**b) create:**      - Create a network
+```
+Usage:  docker network create [OPTIONS] NETWORK
+```
+Create a network
+```
+Options:
+      --attachable           Enable manual container attachment
+      --aux-address map      Auxiliary IPv4 or IPv6 addresses used by
+                             Network driver (default map[])
+      --config-from string   The network from which to copy the configuration
+      --config-only          Create a configuration only network
+  -d, --driver string        Driver to manage the Network (default "bridge")
+      --gateway strings      IPv4 or IPv6 Gateway for the master subnet
+      --ingress              Create swarm routing-mesh network
+      --internal             Restrict external access to the network
+      --ip-range strings     Allocate container ip from a sub-range
+      --ipam-driver string   IP Address Management Driver (default "default")
+      --ipam-opt map         Set IPAM driver specific options (default map[])
+      --ipv6                 Enable or disable IPv6 networking
+      --label list           Set metadata on a network
+  -o, --opt map              Set driver specific options (default map[])
+      --scope string         Control the network's scope
+      --subnet strings       Subnet in CIDR format that represents a
+                             network segment
+  ```
+
+c)  disconnect  Disconnect a container from a network
+
+  
+d)  inspect     Display detailed information on one or more networks
+
+  
+e)  ls          List networks
+
+  
+f)  prune       Remove all unused networks
+
+  
+g)  rm          Remove one or more networks
+
+
   
  17. plugin      Manage plugins
   
