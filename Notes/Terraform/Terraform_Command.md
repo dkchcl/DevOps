@@ -5,15 +5,15 @@ terraform --help
 
 #### Main commands:
 
-  init          Prepare your working directory for other commands
+**1. init**          Prepare your working directory for other commands
   
-  validate      Check whether the configuration is valid
+**2. validate**      Check whether the configuration is valid
   
-  plan          Show changes required by the current configuration
+**3. plan**          Show changes required by the current configuration
   
-  apply         Create or update infrastructure
+**4. apply**         Create or update infrastructure
   
-  destroy       Destroy previously-created infrastructure
+**5. destroy**       Destroy previously-created infrastructure
 
 #### All other commands:
   
