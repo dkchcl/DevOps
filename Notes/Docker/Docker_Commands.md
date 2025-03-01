@@ -440,21 +440,82 @@ Options:
                              network segment
   ```
 
-c)  disconnect  Disconnect a container from a network
+**c)  disconnect:**  - Disconnect a container from a network
+```
+Usage:  docker network disconnect [OPTIONS] NETWORK CONTAINER
+```
+Disconnect a container from a network
+```
+Options:
+  -f, --force   Force the container to disconnect from a network
+```
 
-  
-d)  inspect     Display detailed information on one or more networks
+**d)  inspect:**     - Display detailed information on one or more networks
+```
+Usage:  docker network inspect [OPTIONS] NETWORK [NETWORK...]
+```
+Display detailed information on one or more networks
+```
+Options:
+  -f, --format string   Format output using a custom template:
+                        'json':             Print in JSON format
+                        'TEMPLATE':         Print output using the given
+                        Go template.
+                        Refer to https://docs.docker.com/go/formatting/
+                        for more information about formatting output with
+                        templates
+  -v, --verbose         Verbose output for diagnostics
+  ```
 
-  
-e)  ls          List networks
+**e)  ls:**          - List networks
+```
+Usage:  docker network ls [OPTIONS]
+```
+List networks
 
-  
-f)  prune       Remove all unused networks
+Aliases:
+  docker network ls, docker network list
+```
+Options:
+  -f, --filter filter   Provide filter values (e.g. "driver=bridge")
+      --format string   Format output using a custom template:
+                        'table':            Print output in table format
+                        with column headers (default)
+                        'table TEMPLATE':   Print output in table format
+                        using the given Go template
+                        'json':             Print in JSON format
+                        'TEMPLATE':         Print output using the given
+                        Go template.
+                        Refer to https://docs.docker.com/go/formatting/
+                        for more information about formatting output with
+                        templates
+      --no-trunc        Do not truncate the output
+  -q, --quiet           Only display network IDs
+  ```
 
-  
-g)  rm          Remove one or more networks
+**f)  prune:**       - Remove all unused networks
+```
+Usage:  docker network prune [OPTIONS]
+```
+Remove all unused networks
+```
+Options:
+      --filter filter   Provide filter values (e.g. "until=<timestamp>")
+  -f, --force           Do not prompt for confirmation
+```
 
+**g)  rm:**          - Remove one or more networks
+```
+Usage:  docker network rm NETWORK [NETWORK...]
+```
+Remove one or more networks
 
+Aliases:
+  docker network rm, docker network remove
+```
+Options:
+  -f, --force   Do not error if the network does not exist
+```
   
  17. plugin      Manage plugins
   
