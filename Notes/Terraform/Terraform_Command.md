@@ -17,7 +17,7 @@ terraform --help
 
 #### All other commands:
   
-  **1. console**       Try Terraform expressions at an interactive command prompt
+  **1. console:**       - Try Terraform expressions at an interactive command prompt
 ```
 terraform console --help
 ```
@@ -53,7 +53,7 @@ Options:
                     files are present, they will be automatically loaded.
 ```
   
-  **2. fmt**           Reformat your configuration in the standard style
+  **2. fmt:**           - Reformat your configuration in the standard style
   ```
 terraform fmt --help
 ```
@@ -93,7 +93,7 @@ Options:
                  given directory (or current directory) is processed.
 ```
 
-**3. force-unlock**  Release a stuck lock on the current workspace
+**3. force-unlock:**  - Release a stuck lock on the current workspace
 ```
 terraform force-unlock --help
 ```
@@ -112,7 +112,7 @@ Options:
   -force                 Don't ask for input for unlock confirmation.
 ```
   
-**4. get**           Install or upgrade remote Terraform modules
+**4. get:**           - Install or upgrade remote Terraform modules
 ```
 terraform get --help
 ```
