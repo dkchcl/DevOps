@@ -210,18 +210,18 @@ Options:
 
 #### Management Commands:
 
- 1. ai*         Ask Gordon - Docker Agent
+**1. ai:**          - Ask Gordon - Docker Agent
 
- 2.  builder     Manage builds
+**2. builder:**     - Manage builds
 
- 3. buildx*     Docker Buildx
+**3. buildx:**      - Docker Buildx
   
   
- 4. checkpoint  Manage checkpoints
+**4. checkpoint:**  - Manage checkpoints
   
- 5. compose*    Docker Compose
+**5. compose:**     - Docker Compose
   
-#### **6. container**   Manage containers
+#### 6. container:   Manage containers
 ```
 docker container --help
 ```
@@ -349,7 +349,7 @@ docker container wait --help
 ```
 
 
-**7. context**     Manage contexts
+**7. context:**     - Manage contexts
 ```
 docker context --help
 ```
@@ -371,23 +371,23 @@ Usage:  docker context COMMAND
   use         Set the current docker context
 ```
 
- 8. debug*      Get a shell into any image or container
+**8. debug:**       - Get a shell into any image or container
   
- 9. desktop*    Docker Desktop commands (Beta)
+**9. desktop:**     - Docker Desktop commands (Beta)
   
- 10. dev*        Docker Dev Environments
+**10. dev:**        - Docker Dev Environments
   
- 11. extension*  Manages Docker extensions
+**11. extension:**  - Manages Docker extensions
   
- 12. feedback*   Provide feedback, right in your terminal!
+**12. feedback:**   - Provide feedback, right in your terminal!
   
- 13. image       Manage images
+**13. image:**      - Manage images
   
- 14. init*       Creates Docker-related starter files for your project
+**14. init:**       - Creates Docker-related starter files for your project
   
- 15. manifest    Manage Docker image manifests and manifest lists
+**15. manifest:**   - Manage Docker image manifests and manifest lists
   
-**16. network:**     - Manage networks
+**16. network:**    - Manage networks
 ```
 docker network --help
 ```
