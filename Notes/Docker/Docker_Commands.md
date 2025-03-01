@@ -8,7 +8,7 @@ A self-sufficient runtime for containers
 
 #### Common Commands:
 
-**run**          # Create and run a new container from an image
+**1. run**          # Create and run a new container from an image
 ```powershell
 docker run --help
 ```
@@ -16,7 +16,7 @@ Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 ```powershell
 docker run --detach --name dineshold_pc nginx
 ```
-**exec**        # Execute a command in a running container
+**2. exec**        # Execute a command in a running container
   
   ```
   docker exec --help
@@ -29,7 +29,7 @@ docker exec -i -t dineshold_pc bash
 docker exec -i -t dineshold_pc ls
 docker exec -i -t dineshold_pc sh
 ```
-**ps**          # List containers
+**3. ps**          # List containers
 ```
 docker ps --help
 ```
@@ -77,21 +77,21 @@ CONTAINER ID                                                       IMAGE     COM
 a15a58e7dbd04e303b1c854261c5d88544a0241bad4bac30e0d89035af33cc1c   nginx     "/docker-entrypoint.sh nginx -g 'daemon off;'"   7 minutes ago   Up 7 minutes   80/tcp    dineshnew_pc
 499a3a630743d7db57b8cd9a4a5471e87c827506c615cfe49dbe5d4853523ade   nginx     "/docker-entrypoint.sh nginx -g 'daemon off;'"   9 minutes ago   Up 9 minutes   80/tcp    dineshold_pc
 ```
-  **build**       Build an image from a Dockerfile
+**4. build**       Build an image from a Dockerfile
 ```
  docker build --help
 ```
   ```
   Usage:  docker buildx build [OPTIONS] PATH | URL | -
   ```
-**pull**        Download an image from a registry
+**5. pull**        Download an image from a registry
 ```
 docker pull --help
 ```
 ```
 Usage:  docker pull [OPTIONS] NAME[:TAG|@DIGEST]
 ```
-**push**        Upload an image to a registry
+**6. push**        Upload an image to a registry
 ```
 docker push --help
 ```
@@ -99,7 +99,7 @@ docker push --help
 Usage:  docker push [OPTIONS] NAME[:TAG]
 ```
 
-**images**      List images
+**7. images**      List images
 ```
 docker images --help
 ```
@@ -126,7 +126,7 @@ Options:
   -q, --quiet           Only show image IDs
       --tree            List multi-platform images as a tree (EXPERIMENTAL)
 ```
-**login**       Authenticate to a registry
+**8. login**       Authenticate to a registry
 ```
 docker login --help
 ```
@@ -143,7 +143,7 @@ Options:
   -u, --username string   Username
 ```
 
-**logout**      Log out from a registry
+**9. logout**      Log out from a registry
 ```
 docker logout --help
 ```
@@ -153,7 +153,7 @@ Usage:  docker logout [SERVER]
 Log out from a registry.
 If no server is specified, the default is defined by the daemon.  
 
-**search**      Search Docker Hub for images
+**10. search**      Search Docker Hub for images
 ```
 docker search --help
 ```
@@ -168,7 +168,7 @@ Options:
       --limit int       Max number of search results
       --no-trunc        Don't truncate output
 ```
-**version**     Show the Docker version information
+**11. version**     Show the Docker version information
 ```
 docker version --help
 ```
@@ -186,7 +186,7 @@ Options:
                         for more information about formatting output with
                         templates
 ```
-**info**        Display system-wide information
+**12. info**        Display system-wide information
 ```
 docker info --help
 ```
@@ -210,18 +210,18 @@ Options:
 
 #### Management Commands:
 
-  ai*         Ask Gordon - Docker Agent
+ 1. ai*         Ask Gordon - Docker Agent
 
-  builder     Manage builds
+ 2.  builder     Manage builds
 
-  buildx*     Docker Buildx
+ 3. buildx*     Docker Buildx
   
   
-  checkpoint  Manage checkpoints
+ 4. checkpoint  Manage checkpoints
   
-  compose*    Docker Compose
+ 5. compose*    Docker Compose
   
-#### **container**   Manage containers
+#### **6. container**   Manage containers
 ```
 docker container --help
 ```
@@ -349,7 +349,7 @@ docker container wait --help
 ```
 
 
-**context**     Manage contexts
+**7. context**     Manage contexts
 ```
 docker context --help
 ```
@@ -371,35 +371,35 @@ Usage:  docker context COMMAND
   use         Set the current docker context
 ```
 
-  debug*      Get a shell into any image or container
+ 8. debug*      Get a shell into any image or container
   
-  desktop*    Docker Desktop commands (Beta)
+ 9. desktop*    Docker Desktop commands (Beta)
   
-  dev*        Docker Dev Environments
+ 10. dev*        Docker Dev Environments
   
-  extension*  Manages Docker extensions
+ 11. extension*  Manages Docker extensions
   
-  feedback*   Provide feedback, right in your terminal!
+ 12. feedback*   Provide feedback, right in your terminal!
   
-  image       Manage images
+ 13. image       Manage images
   
-  init*       Creates Docker-related starter files for your project
+ 14. init*       Creates Docker-related starter files for your project
   
-  manifest    Manage Docker image manifests and manifest lists
+ 15. manifest    Manage Docker image manifests and manifest lists
   
-  network     Manage networks
+ 16. network     Manage networks
   
-  plugin      Manage plugins
+ 17. plugin      Manage plugins
   
-  sbom*       View the packaged-based Software Bill Of Materials (SBOM) for an image
+ 18. sbom*       View the packaged-based Software Bill Of Materials (SBOM) for an image
   
-  scout*      Docker Scout
+ 19. scout*      Docker Scout
   
-  system      Manage Docker
+ 20. system      Manage Docker
   
-  trust       Manage trust on Docker images
+ 21. trust       Manage trust on Docker images
   
-  volume      Manage volumes
+ 22. volume      Manage volumes
 
 #### Swarm Commands:
   
