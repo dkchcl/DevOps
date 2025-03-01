@@ -387,7 +387,7 @@ Usage:  docker context COMMAND
   
 **15. manifest:**   - Manage Docker image manifests and manifest lists
   
-**16. network:**    - Manage networks
+### 16. network:    - Manage networks
 ```
 docker network --help
 ```
