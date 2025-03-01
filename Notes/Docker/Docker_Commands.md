@@ -221,23 +221,61 @@ Options:
   
   compose*    Docker Compose
   
-**container**   Manage containers
+#### **container**   Manage containers
 ```
 docker container --help
 ```
 ```
 Usage:  docker container COMMAND
 ```
-Manage containers
+#### Manage containers
+
+**Commands:**
+
+**attach**  Attach local standard input, output, and error streams to a running container
 ```
-Commands:
-  attach      Attach local standard input, output, and error streams to a running container
-  commit      Create a new image from a container's changes
-  cp          Copy files/folders between a container and the local filesystem
-  create      Create a new container
-  diff        Inspect changes to files or directories on a container's filesystem
-  exec        Execute a command in a running container
-  export      Export a container's filesystem as a tar archive
+docker container attach --help
+```
+```
+Usage:  docker container attach [OPTIONS] CONTAINER
+```
+Attach local standard input, output, and error streams to a running container
+
+Aliases:
+  docker container attach, docker attach
+```
+Options:
+      --detach-keys string   Override the key sequence for detaching a
+                             container
+      --no-stdin             Do not attach STDIN
+      --sig-proxy            Proxy all received signals to the process
+                             (default true)
+```                             
+**commit**      Create a new image from a container's changes
+```
+docker container commit --help
+```
+**cp**          Copy files/folders between a container and the local filesystem
+```
+docker container cp --help
+```
+**create**      Create a new container
+```
+docker container create --help
+```  
+**diff**        Inspect changes to files or directories on a container's filesystem
+```
+docker container diff --help
+```  
+**exec**        Execute a command in a running container
+```
+docker container exec --help
+```  
+**export**      Export a container's filesystem as a tar archive
+```
+docker container export --help
+```
+
   inspect     Display detailed information on one or more containers
   kill        Kill one or more running containers
   logs        Fetch the logs of a container
