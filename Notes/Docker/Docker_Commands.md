@@ -276,23 +276,74 @@ docker container exec --help
 docker container export --help
 ```
 
-  inspect     Display detailed information on one or more containers
-  kill        Kill one or more running containers
-  logs        Fetch the logs of a container
-  ls          List containers
-  pause       Pause all processes within one or more containers
-  port        List port mappings or a specific mapping for the container
-  prune       Remove all stopped containers
-  rename      Rename a container
-  restart     Restart one or more containers
+**inspect**     Display detailed information on one or more containers
+  ```
+docker container inspect --help
+```
+**kill**        Kill one or more running containers
+```
+docker container kill --help
+```
+**logs**        Fetch the logs of a container
+```
+docker container logs --help
+```
+**ls**          List containers
+```
+docker container ls --help
+```
+**pause**       Pause all processes within one or more containers
+```
+docker container pause --help
+```
+**port**        List port mappings or a specific mapping for the container
+```
+docker container port --help
+```
+**prune**       Remove all stopped containers
+```
+docker container prune --help
+```
+**rename**      Rename a container
+```
+docker container rename --help
+```
+**restart**     Restart one or more containers
+```
+docker container export --help
+```
   rm          Remove one or more containers
+  ```
+docker container export --help
+```
   run         Create and run a new container from an image
+  ```
+docker container export --help
+```
   start       Start one or more stopped containers
+  ```
+docker container export --help
+```
   stats       Display a live stream of container(s) resource usage statistics
+  ```
+docker container export --help
+```
   stop        Stop one or more running containers
+  ```
+docker container export --help
+```
   top         Display the running processes of a container
+  ```
+docker container export --help
+```
   unpause     Unpause all processes within one or more containers
+  ```
+docker container export --help
+```
   update      Update configuration of one or more containers
+  ```
+docker container export --help
+```
   wait        Block until one or more containers stop, then print their exit codes
 ```
 
