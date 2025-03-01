@@ -8,7 +8,7 @@ A self-sufficient runtime for containers
 
 #### Common Commands:
 
-  run          Create and run a new container from an image
+  run          # Create and run a new container from an image
 ```powershell
 docker run --help
 ```
