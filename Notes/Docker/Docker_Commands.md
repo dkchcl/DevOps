@@ -19,7 +19,7 @@ docker run --detach --name dineshold_pc nginx
 **exec**        # Execute a command in a running container
   
   ```
-  exec --help
+  docker exec --help
   ```
   Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
 
@@ -31,7 +31,7 @@ docker exec -i -t dineshold_pc sh
 ```
 **ps**          # List containers
 ```
-ps --help
+docker ps --help
 ```
   Show all containers (default shows just running)
 ```powershell
@@ -85,9 +85,47 @@ a15a58e7dbd04e303b1c854261c5d88544a0241bad4bac30e0d89035af33cc1c   nginx     "/d
   Usage:  docker buildx build [OPTIONS] PATH | URL | -
   ```
 **pull**        Download an image from a registry
-  
-  push        Upload an image to a registry
-  images      List images
+```
+docker pull --help
+```
+```
+Usage:  docker pull [OPTIONS] NAME[:TAG|@DIGEST]
+```
+**push**        Upload an image to a registry
+```
+docker push --help
+```
+```
+Usage:  docker push [OPTIONS] NAME[:TAG]
+```
+
+**images**      List images
+```
+docker images --help
+```
+```
+Usage:  docker images [OPTIONS] [REPOSITORY[:TAG]]
+```
+```
+Options:
+  -a, --all             Show all images (default hides intermediate images)
+      --digests         Show digests
+  -f, --filter filter   Filter output based on conditions provided
+      --format string   Format output using a custom template:
+                        'table':            Print output in table format
+                        with column headers (default)
+                        'table TEMPLATE':   Print output in table format
+                        using the given Go template
+                        'json':             Print in JSON format
+                        'TEMPLATE':         Print output using the given
+                        Go template.
+                        Refer to https://docs.docker.com/go/formatting/
+                        for more information about formatting output with
+                        templates
+      --no-trunc        Don't truncate output
+  -q, --quiet           Only show image IDs
+      --tree            List multi-platform images as a tree (EXPERIMENTAL)
+```
   login       Authenticate to a registry
   logout      Log out from a registry
   search      Search Docker Hub for images
