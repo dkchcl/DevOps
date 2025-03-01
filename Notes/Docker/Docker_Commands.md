@@ -168,10 +168,47 @@ Options:
       --limit int       Max number of search results
       --no-trunc        Don't truncate output
 ```
-  version     Show the Docker version information
-  info        Display system-wide information
+**version**     Show the Docker version information
+```
+docker version --help
+```
+```
+Usage:  docker version [OPTIONS]
+```
+Show the Docker version information
+```
+Options:
+  -f, --format string   Format output using a custom template:
+                        'json':             Print in JSON format
+                        'TEMPLATE':         Print output using the given
+                        Go template.
+                        Refer to https://docs.docker.com/go/formatting/
+                        for more information about formatting output with
+                        templates
+```
+**info**        Display system-wide information
+```
+docker info --help
+```
+```
+Usage:  docker info [OPTIONS]
+```
+Display system-wide information
 
-Management Commands:
+Aliases:
+  docker system info, docker info
+```
+Options:
+  -f, --format string   Format output using a custom template:
+                        'json':             Print in JSON format
+                        'TEMPLATE':         Print output using the given
+                        Go template.
+                        Refer to https://docs.docker.com/go/formatting/
+                        for more information about formatting output with
+                        templates
+```
+
+#### Management Commands:
   ai*         Ask Gordon - Docker Agent
   builder     Manage builds
   buildx*     Docker Buildx
