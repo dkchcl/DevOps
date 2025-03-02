@@ -141,9 +141,102 @@ Options:
   -test-directory=path  Set the Terraform test directory, defaults to "tests".
 ```
   
-  graph         Generate a Graphviz graph of the steps in an operation
-  
-  import        Associate existing infrastructure with a Terraform resource
+**5. graph:**         - Generate a Graphviz graph of the steps in an operation
+```
+terraform graph --help
+```
+```
+Usage: terraform [global options] graph [options]
+```
+  Produces a representation of the dependency graph between different
+  objects in the current configuration and state.
+
+  By default the graph shows a summary only of the relationships between
+  resources in the configuration, since those are the main objects that
+  have side-effects whose ordering is significant. You can generate more
+  detailed graphs reflecting Terraform's actual evaluation strategy
+  by specifying the -type=TYPE option to select an operation type.
+
+  The graph is presented in the DOT language. The typical program that can
+  read this format is GraphViz, but many web services are also available
+  to read this format.
+```
+Options:
+
+  -plan=tfplan     Render graph using the specified plan file instead of the
+                   configuration in the current directory. Implies -type=apply.
+
+  -draw-cycles     Highlight any cycles in the graph with colored edges.
+                   This helps when diagnosing cycle errors. This option is
+                   supported only when illustrating a real evaluation graph,
+                   selected using the -type=TYPE option.
+
+  -type=TYPE       Type of operation graph to output. Can be: plan,
+                   plan-refresh-only, plan-destroy, or apply. By default
+                   Terraform just summarizes the relationships between the
+                   resources in your configuration, without any particular
+                   operation in mind. Full operation graphs are more detailed
+                   but therefore often harder to read.
+
+  -module-depth=n  (deprecated) In prior versions of Terraform, specified the
+                   depth of modules to show in the output.
+```
+
+**6. import:**        - Associate existing infrastructure with a Terraform resource
+```
+terraform import --help
+```
+```
+Usage: terraform [global options] import [options] ADDR ID
+```
+  Import existing infrastructure into your Terraform state.
+
+  This will find and import the specified resource into your Terraform
+  state, allowing existing infrastructure to come under Terraform
+  management without having to be initially created by Terraform.
+
+  The ADDR specified is the address to import the resource to. Please
+  see the documentation online for resource addresses. The ID is a
+  resource-specific ID to identify that resource being imported. Please
+  reference the documentation for the resource type you're importing to
+  determine the ID syntax to use. It typically matches directly to the ID
+  that the provider uses.
+
+  This command will not modify your infrastructure, but it will make
+  network requests to inspect parts of your infrastructure relevant to
+  the resource being imported.
+```
+Options:
+
+  -config=path            Path to a directory of Terraform configuration files
+                          to use to configure the provider. Defaults to pwd.
+                          If no config files are present, they must be provided
+                          via the input prompts or env vars.
+
+  -input=false            Disable interactive input prompts.
+
+  -lock=false             Don't hold a state lock during the operation. This is
+                          dangerous if others might concurrently run commands
+                          against the same workspace.
+
+  -lock-timeout=0s        Duration to retry a state lock.
+
+  -no-color               If specified, output won't contain any color.
+
+  -var 'foo=bar'          Set a variable in the Terraform configuration. This
+                          flag can be set multiple times. This is only useful
+                          with the "-config" flag.
+
+  -var-file=foo           Set variables in the Terraform configuration from
+                          a file. If "terraform.tfvars" or any ".auto.tfvars"
+                          files are present, they will be automatically loaded.
+
+  -ignore-remote-version  A rare option used for the remote backend only. See
+                          the remote backend documentation for more information.
+
+  -state, state-out, and -backup are legacy options supported for the local
+  backend only. For more information, see the local backend's documentation.
+```
   
   login         Obtain and save credentials for a remote host
   
