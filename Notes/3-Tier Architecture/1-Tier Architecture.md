@@ -27,3 +27,39 @@
 
 ### Summary:
 **1-Tier Architecture** ek simple model hai jisme sabhi tasks ek hi system par hote hain. Yeh small applications ke liye suitable hai, lekin larger applications ke liye scalability aur flexibility ka issue ho sakta hai.
+
+In **1-Tier Architecture**, all components such as the user interface, business logic, and data storage are integrated into a single system. There is no separation of layers, and everything works within a single machine or platform.
+
+### **1-Tier Architecture Diagram:**
+
+```
++---------------------------+
+|       User Interface       |    <-- User interacts directly with the application.
++---------------------------+
+|      Business Logic        |    <-- Handles processing and application logic.
++---------------------------+
+|       Data Storage         |    <-- Stores and retrieves data locally (e.g., local database).
++---------------------------+
+|        System/Computer     |    <-- All layers (UI, Logic, and Data) are in one system.
++---------------------------+
+```
+
+### **Explanation of the Diagram:**
+
+1. **User Interface (UI)**: This is the front-end part where the user interacts with the application. The user can view data, enter inputs, and see results.
+   
+2. **Business Logic**: This layer processes the data and handles the application’s core functionalities. It performs tasks like calculations or data transformations.
+   
+3. **Data Storage**: The application stores data locally in this layer, which could be in the form of flat files or a local database, like SQLite.
+
+4. **System/Computer**: All these components (UI, Business Logic, and Data) reside within the same system, which is typically a personal computer or a local machine.
+
+### **How It Works:**
+- **User** interacts with the **User Interface**.
+- **Business Logic** processes the data or user requests.
+- The **Data Storage** is accessed locally (on the same machine) to retrieve or store data.
+- Everything happens in a single system, which keeps the architecture simple but limited in terms of scalability and flexibility.
+
+### **Use Case:**
+- **Single-User Applications**: Like a calculator, personal finance software, or desktop applications.
+
