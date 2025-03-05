@@ -42,3 +42,50 @@
 
 ### Summary:
 **2-Tier Architecture** ek simple aur efficient model hai jahan client aur server ke beech direct communication hota hai. Yeh architecture small to medium applications ke liye suitable hai, lekin jab application ko scale karna ho, toh zyada complex architectures (jaise 3-Tier) ki zarurat padti hai.
+
+
+### **2-Tier Architecture Diagram (2-टियर आर्किटेक्चर डाइग्राम)**
+
+**2-Tier Architecture** mein system ko do layers mein divide kiya jata hai: **Client Layer** aur **Server Layer**. **Client Layer** user interface ko handle karta hai aur directly **Server Layer** ke saath interact karta hai, jo business logic aur data storage ka kaam karta hai.
+
+### **2-Tier Architecture Diagram:**
+
+```
++---------------------------+            +-----------------------------+
+|        Client Layer        |            |       Server Layer          |
+|  (User Interface + Logic)  |  <----->   | (Business Logic + Data      |
+|                           |            |        Storage)             |
++---------------------------+            +-----------------------------+
+         (User)                                   (Database/Server)
+```
+
+### **डायग्राम का विवरण:**
+
+1. **Client Layer (क्लाइंट लेयर)**:
+   - **User Interface (UI)**: Yah wo layer hai jahan user application ke saath interact karta hai. Client layer presentation aur user input/output ko handle karta hai.
+   - **Client Logic**: Client layer par kuch basic processing bhi ho sakti hai, lekin zyada tar data storage aur business logic ke liye server par depend karta hai.
+
+2. **Server Layer (सर्वर लेयर)**:
+   - **Business Logic**: Yah server pe data processing aur calculations ka kaam karta hai.
+   - **Data Storage**: Server data ko store, retrieve aur update karta hai. Yah centralized database (jaise MySQL, PostgreSQL) ho sakta hai.
+
+### **कैसे काम करता है:**
+- **Client Layer** server ko request bhejta hai.
+- **Server Layer** request ko process karta hai, business logic execute karta hai, aur data storage se data fetch ya update karta hai.
+- Server apne results ko client ko bhejta hai, jahan user ko information dikhayi jaati hai.
+
+### **2-Tier Architecture ka Example:**
+- Ek **desktop application** (client) jo **database server** (server) ke saath directly interact karta hai, data fetch karne, update karne ya delete karne ke liye.
+- Example: Ek **banking application** jahan client-side interface transactions ka data request karta hai, aur server-side business logic ko process karke database se data retrieve karta hai.
+
+### **2-Tier Architecture ke Advantages (फायदे):**
+1. **Simplicity**: Kam layers hone ki wajah se development simple aur fast hota hai.
+2. **Better Performance**: Client aur server ke beech direct communication hone ki wajah se performance achi hoti hai.
+3. **Centralized Data Management**: Data server mein centralized hota hai, jise manage aur maintain karna aasan hota hai.
+
+### **Disadvantages (नुकसान):**
+1. **Scalability Issues**: Jaise-jaise clients ka number badhta hai, server par load badh jata hai, jo performance ko affect kar sakta hai.
+2. **Limited Flexibility**: Client aur server ke beech direct dependency hoti hai, jo ek layer mein changes karte waqt doosri layer ko bhi affect kar sakti hai.
+
+### **Use Case (उदाहरण):**
+- **Small to Medium Applications**: Jaise CRM (Customer Relationship Management) system ya inventory management systems.
