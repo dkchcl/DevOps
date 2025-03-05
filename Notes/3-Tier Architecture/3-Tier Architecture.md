@@ -52,3 +52,60 @@
 
 ### Summary:
 **3-Tier Architecture** ek efficient aur scalable solution hai, jo large applications mein use hota hai. Har layer ko alag responsibilities di jati hain, jo system ko modular, maintainable, aur secure banata hai. Is architecture ka use tab hota hai jab application ko complex functionality, scalability, aur flexibility ki zaroorat ho.
+
+
+
+
+### **3-Tier Architecture Diagram (3-टियर आर्किटेक्चर डाइग्राम)**
+
+**3-Tier Architecture** mein system ko teen layers mein divide kiya jata hai: **Presentation Layer**, **Business Logic Layer**, aur **Data Layer**. Har layer ka apna specific kaam hota hai aur yeh layers ek doosre se interact karti hain.
+
+### **3-Tier Architecture Diagram:**
+
+```
++---------------------------+          +-----------------------------+          +---------------------------+
+|     Presentation Layer     |  <-----> |   Business Logic Layer      |  <-----> |       Data Layer          |
+|     (User Interface)       |          |     (Application Logic)     |          |    (Database Storage)     |
++---------------------------+          +-----------------------------+          +---------------------------+
+        (User)                           (Business Processing)                   (Data Management)
+```
+
+### **डायग्राम का विवरण:**
+
+1. **Presentation Layer (प्रेजेंटेशन लेयर)**:
+   - **User Interface (UI)**: Yah wo layer hai jahan user application ke saath interact karta hai. User ko data dikhana aur user se input lena is layer ka kaam hai.
+   - Yeh layer sirf data ko present karti hai aur user ke inputs ko business logic layer ko bhejti hai.
+
+2. **Business Logic Layer (बिजनेस लॉजिक लेयर)**:
+   - Yah layer application ka core logic handle karti hai, jaise calculations, validations, aur business rules. Is layer ka kaam data ko process karna aur request ke hisaab se decision lena hai.
+   - Jab client presentation layer se request bhejta hai, toh yeh layer wo request process karti hai aur data layer se data fetch ya update karti hai.
+
+3. **Data Layer (डेटा लेयर)**:
+   - Yah layer data ko store karti hai aur retrieve karti hai. Yeh layer server par hoti hai aur database (jaise MySQL, PostgreSQL) ka use karti hai.
+   - Business logic layer data layer se data retrieve karne ya store karne ke liye interact karti hai.
+
+### **कैसे काम करता है:**
+- **Presentation Layer** se user koi request bhejta hai, jaise kisi product ko search karna.
+- **Business Logic Layer** wo request process karta hai, jaise query ko validate karna aur data ko process karna.
+- **Data Layer** se business logic layer data retrieve karta hai ya update karta hai.
+- Server ka result **Business Logic Layer** ko return hota hai, jo fir **Presentation Layer** ko data bhejta hai aur user ko display karta hai.
+
+### **Example of 3-Tier Architecture:**
+- **E-commerce Website**: 
+  1. **Presentation Layer**: User website par visit karta hai, products search karta hai.
+  2. **Business Logic Layer**: Server product search query ko process karta hai, filter apply karta hai.
+  3. **Data Layer**: Server database se products retrieve karta hai aur return karta hai.
+
+### **Advantages (फायदे):**
+1. **Modularity**: Har layer apne specific kaam ko handle karti hai, jo system ko modular banaata hai.
+2. **Scalability**: Agar system ko scale karna ho, toh har layer ko independently scale kiya ja sakta hai.
+3. **Maintainability**: Har layer ko alag rakha jata hai, jisse maintenance aur upgrades aasan hote hain.
+4. **Security**: Data access ko restricted rakha jata hai, jisse system ko zyada secure banaya ja sakta hai.
+
+### **Disadvantages (नुकसान):**
+1. **Complexity**: Teen layers hone ke wajah se system thoda complex ho sakta hai.
+2. **Performance Overhead**: Data transfer aur communication ke liye layers ke beech interaction hota hai, jo performance ko thoda slow kar sakta hai.
+
+### **Use Cases (उदाहरण):**
+- **Large-Scale Web Applications**: Jaise online banking systems, e-commerce websites, content management systems (CMS).
+- **Enterprise Applications**: Jaise ERP (Enterprise Resource Planning) systems.
