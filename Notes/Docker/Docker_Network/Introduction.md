@@ -1,11 +1,13 @@
-Docker networking refers to the way containers communicate with each other and with the outside world. Docker provides several networking options to meet different use cases. Here’s an overview of Docker networking:
+## Docker network:
+
+**Docker networking** refers to the way containers communicate with each other and with the outside world. Docker provides several networking options to meet different use cases. Here’s an overview of Docker networking:
 
 ### 1. **Network Types in Docker**
 
 #### a. **Bridge Network** (default)
 - **Use case**: This is the default network mode for containers if no other network is specified.
-- **How it works**: Docker creates a virtual bridge (like `docker0`) on the host, and containers get IP addresses in the bridge’s subnet. They can communicate with each other via this bridge.
-- **Isolation**: Containers are isolated from the host machine and other networks, but they can communicate with the host via port forwarding.
+- **How it works**: Docker creates a virtual bridge (like `docker0`) on the host, and **containers get IP addresses in the bridge’s subnet**. They can communicate with each other via this bridge.
+- **Isolation**: Containers are isolated from the host machine and other networks, but they can **communicate with the host via port forwarding**.
 
 #### b. **Host Network**
 - **Use case**: If you want your container to share the host's network stack.
