@@ -1,5 +1,6 @@
+## Visual Studio Code (VS Code)-
 
-Visual Studio Code (VS Code) is a popular, free, open-source code editor developed by Microsoft. It's lightweight, highly customizable, and supports various programming languages and frameworks. Some of its key features include:
+**Visual Studio Code (VS Code)** is a popular, free, open-source code editor developed by Microsoft. It's lightweight, highly customizable, and supports various programming languages and frameworks. Some of its key features include:
 
 1. **Code Editing**: VS Code has syntax highlighting, autocompletion, IntelliSense, and bracket matching for various languages.
    
@@ -13,4 +14,4 @@ Visual Studio Code (VS Code) is a popular, free, open-source code editor develop
 
 6. **Customization**: You can tweak themes, keybindings, and layout according to your preferences.
 
-Is there a specific feature or issue you're looking to learn more about with Visual Studio Code?
+
