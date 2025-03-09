@@ -1,32 +1,6 @@
 ## Docker Custom Images Creation Manual
 
 ```
-PS E:\> docker images
-REPOSITORY         TAG       IMAGE ID       CREATED       SIZE
-amitkkc01/ubuntu   latest    3f0698943ff5   2 hours ago   297MB
-PS E:\> docker run -d --name dkc1345 -p 8990:80 amitkkc01/ubuntu
-72bac0edc0366f7daf0cb7747aa064c064fd7510bb37161f2a2963e90e275a36
-PS E:\> docker ps 
-CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
-PS E:\> docker ps -a
-CONTAINER ID   IMAGE              COMMAND       CREATED          STATUS                      PORTS     NAMES
-72bac0edc036   amitkkc01/ubuntu   "/bin/bash"   29 seconds ago   Exited (0) 26 seconds ago             dkc1345
-PS E:\> docker run -d --name dkc1345 -it -p 8991:80 amitkkc01/ubuntu
-docker: Error response from daemon: Conflict. The container name "/dkc1345" is already in use by container "72bac0edc0366f7daf0cb7747aa064c064fd7510bb37161f2a2963e90e275a36". You have to remove (or rename) that container to be able to reuse that name.
-See 'docker run --help'.
-PS E:\> docker run -d --name dkc134567 -it -p 8992:80 amitkkc01/ubuntu
-98bf41c24253870e160cfddceb946d8aa087b0acedbf74c79814373eaf1d0da7
-PS E:\> docker ps -a
-CONTAINER ID   IMAGE              COMMAND       CREATED              STATUS                          PORTS                          NAMES
-98bf41c24253   amitkkc01/ubuntu   "/bin/bash"   4 seconds ago        Up 4 seconds                    22/tcp, 0.0.0.0:8992->80/tcp   dkc134567
-72bac0edc036   amitkkc01/ubuntu   "/bin/bash"   About a minute ago   Exited (0) About a minute ago                                  dkc1345
-PS E:\> 
- *  History restored 
-
-PS E:\DevOps Notes\my_codes> cd..
-PS E:\DevOps Notes\my_codes> cd..
-PS E:\DevOps Notes\my_codes> cd..
-PS E:\DevOps Notes> cd..
 PS E:\> git
 git : The term 'git' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that
 the path is correct and try again.
