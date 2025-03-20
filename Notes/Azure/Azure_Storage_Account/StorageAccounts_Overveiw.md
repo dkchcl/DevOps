@@ -1,4 +1,4 @@
-### Azure Storage Accounts:
+## Azure Storage Accounts:
 
 **Azure Storage Account Overview:**
 Azure Storage Accounts are a core service in Microsoft Azure, providing highly available, scalable, and secure cloud storage for data in different types of formats. They are the foundation for services like Azure Blob Storage, File Storage, Queue Storage, Table Storage, and Disk Storage.
@@ -18,7 +18,7 @@ Azure provides several types of storage accounts based on the requirements for y
 
 8. In Azure, there are several types of storage accounts designed to support different use cases. Here's an overview of the main types:
 
-In Details:
+In Details (Types of Storage Accounts):
 ---
 
 ### **1. General-purpose v2 (GPv2) Storage Account**
