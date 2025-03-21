@@ -1,4 +1,4 @@
-# Class Notes: Introduction to Terraform
+# Introduction to Terraform
 
 ## 🌱 Started Learning Terraform
 
