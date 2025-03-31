@@ -1,5 +1,10 @@
-## Terraform State Commands:
+## State Commands:
 
+- Terraform ke **state** commands ko samajhna zaroori hai, kyunki ye aapko aapke infrastructure ka track rakhne aur state file ko manage karne me madad karte hain. In commands ka use aap Terraform ke state file ko inspect karne, resources ko modify karne, ya state file ko troubleshoot karne ke liye kar sakte hain.
+
+### Terraform State Commands
+
+Terraform me state commands ka use aap **state file** ko inspect, modify, ya update karne ke liye karte hain. Aap state file ko **locally** ya **remotely** store kar rahe ho, dono cases me ye commands kaafi useful hote hain.
 **Usage:**
 ```
 terraform [global options] state <subcommand> [options] [args]
@@ -14,13 +19,6 @@ terraform [global options] state <subcommand> [options] [args]
     rm                  Remove instances from the state
     show                Show a resource in the state
 ```
-
-
-- Terraform ke **state** commands ko samajhna zaroori hai, kyunki ye aapko aapke infrastructure ka track rakhne aur state file ko manage karne me madad karte hain. In commands ka use aap Terraform ke state file ko inspect karne, resources ko modify karne, ya state file ko troubleshoot karne ke liye kar sakte hain.
-
-### Terraform State Commands
-
-Terraform me state commands ka use aap **state file** ko inspect, modify, ya update karne ke liye karte hain. Aap state file ko **locally** ya **remotely** store kar rahe ho, dono cases me ye commands kaafi useful hote hain.
 
 #### 1. **`terraform state list`**
 Is command ka use aap apne Terraform state file me stored saare resources ko list karne ke liye karte hain.
