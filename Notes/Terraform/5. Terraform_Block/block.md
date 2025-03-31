@@ -1,17 +1,20 @@
+## Terraform Blocks:
+
 Terraform me **block** ek configuration element hota hai jo aapke infrastructure ka definition aur behavior specify karta hai. Har block ek specific type ka hota hai aur uska apna syntax aur purpose hota hai. Terraform blocks ko use karke aap infrastructure ke resources ko define karte hain, providers ko configure karte hain, aur backend setup karte hain.
 
 Terraform me kai tarah ke blocks hote hain, jaise `resource`, `provider`, `module`, `variable`, `output`, aur `data`. In sab blocks ka apna ek specific role hota hai. 
 
 ### Terraform me Common Blocks:
-1. **resource**
-2. **provider**
-3. **variable**
-4. **output**
-5. **module**
-6. **data**
-7. **terraform (backend block)**
-8. **locals**
-9. **terraform block**
+1. **terraform block**
+2. **resource**
+3. **provider**
+4. **variable**
+5. **output**
+6. **module**
+7. **data**
+8. **terraform (backend block)**
+9. **locals**
+
 
 Chaliye, har block ko detail me samajhte hain, **Azure example ke saath**.
 
