@@ -1,4 +1,6 @@
-## Create Storage Account Using Implicit & Explicit Dependancy:
+## Create Storage Account Using Implicit & Explicit Dependancy --
+
+#### Example:
 
 ```
 terraform {
