@@ -18,3 +18,13 @@ RUN dotnet publish -c Release -o ./publish
 
 # Set the entry point for the application (run the published application)
 CMD ["dotnet", "publish/ElearnBackend.dll"]
+
+
+
+Run container:
+
+docker run -p 5000:5000 -p 5001:5001 elearn-backend
+
+Hit on local computer:
+
+localhost:port/swagger
