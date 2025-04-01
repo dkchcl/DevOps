@@ -1,6 +1,6 @@
 ## Create Storage Account Using Implicit & Explicit Dependancy --
 
-#### Example:
+#### Example:(Explicit)
 
 ```
 terraform {
@@ -29,7 +29,7 @@ resource "azurerm_storage_account" "ST-01" {
   account_replication_type = "LRS"
 }
 resource "azurerm_storage_container" "STC-01" {
-  depends_on = [ azurerm_resource_group.RG-01, azurerm_storage_account.ST-01 ]
+  depends_on = [ azurerm_resource_group.RG-01, azurerm_storage_account.ST-01 ]                        # Explicit dependancy..
   name                  = "dkcstoragecontainer0001"
   storage_account_id    = azurerm_storage_account.ST-01.id
   container_access_type = "private"
