@@ -49,7 +49,7 @@ CMD ["nginx", "-g", "daemon off;"]                        # or use- ENTRYPOINT [
   - **COPY --from=build**: Copies the built app from the previous stage (Node.js build) into Nginx's web directory.
   - **EXPOSE 80**: Exposes port 80 to serve the app over HTTP.
   - **CMD**: Runs Nginx to serve the app in the foreground.
-  - **ENTRYPOINT** `["nginx", "-g", "daemon off;"]:` Runs Nginx in the foreground (the -g "daemon off;" option keeps Nginx running in the foreground, preventing the container from stopping immediately).
+  - **ENTRYPOINT** `["nginx", "-g", "daemon off;"]:` Runs Nginx in the foreground (the `"-g", "daemon off;"` option keeps Nginx running in the foreground, preventing the container from stopping immediately).
 
 ### Build and Run Instructions:
 - **Build Image**: `docker build -t elearn_frontend:latest .`
