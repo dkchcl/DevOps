@@ -35,3 +35,7 @@ Run Docker Container:
 ```
 docker run -dit -p 7777:8080 elearn-backend:v1
 ```
+**Hit on local computer with Swagger:**
+```
+localhost:port/swagger
+```
