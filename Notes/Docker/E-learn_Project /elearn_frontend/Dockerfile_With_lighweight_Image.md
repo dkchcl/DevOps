@@ -32,7 +32,7 @@ COPY --from=build /dkc90/build* .
 EXPOSE 80
 
 # Start Nginx in the foreground to serve the app
-CMD ["nginx", "-g", "daemon off;"]                        #ENTRYPOINT ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]                        # or use- ENTRYPOINT ["nginx", "-g", "daemon off;"]
 ```
 
 ### Comment Breakdown:
