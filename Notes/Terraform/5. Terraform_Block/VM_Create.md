@@ -130,7 +130,7 @@ storage_image_reference {
     enable_automatic_upgrades = true
   }
   tags = {
-    environment = "Prod_02"
+    environment = "Prod_01"
   }
 }
 
