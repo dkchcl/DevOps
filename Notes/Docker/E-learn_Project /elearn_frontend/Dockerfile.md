@@ -67,7 +67,19 @@ Is Dockerfile mein:
 - Uske baad Nginx web server ko install karke, usko container mein serve karne ke liye set kar rahe hain.
 - Aur, finally, port 80 pe Nginx ko run karwa rahe hain taaki tumhara app publicly accessible ho jaye.
 
+**Image Build Command:**
+```
+docker build -t elearn-frontend:v1 .
+```
+**Run Docker Container:**
 
+```
+docker run -d -p 8888:80 elearn-frontend:v1
+```
+**Hit on local computer:**
+```
+localhost:8888
+```
 
 
 
