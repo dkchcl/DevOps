@@ -26,7 +26,7 @@ RUN cp -r build/* /var/www/html
 EXPOSE 80
 
 # Start Nginx in the foreground to serve the app
-CMD ["nginx", "-g", "daemon off;"]                    # or mention ENTRYPOINT ["nginx", "-g", "daemon off;"] 
+CMD ["nginx", "-g", "daemon off;"]                    # or mention- ENTRYPOINT ["nginx", "-g", "daemon off;"] 
 ```
 
 ### Comment Breakdown:
@@ -57,15 +57,15 @@ CMD ["nginx", "-g", "daemon off;"]                    # or mention ENTRYPOINT ["
 
 ### 9. `CMD ["nginx", "-g", "daemon off;"]`
 - **Kya ho raha hai?**: Jab container start hoga, yeh command Nginx ko run karegi. `-g "daemon off;"` ka matlab hai ki Nginx ko background mein run nahi hone dena hai, balki foreground mein run karna hai, taaki container chal raha rahe.
-
 ---
-
 ### Simple Explanation:
 Is Dockerfile mein:
 - Hum apne Node.js app ko container mein setup kar rahe hain.
 - Build kar rahe hain.
 - Uske baad Nginx web server ko install karke, usko container mein serve karne ke liye set kar rahe hain.
 - Aur, finally, port 80 pe Nginx ko run karwa rahe hain taaki tumhara app publicly accessible ho jaye.
+
+
 
 **Image Build Command:**
 ```
