@@ -26,11 +26,11 @@ CMD ["dotnet", "publish/ElearnBackend.dll"]
 ```
 
 
-Image Build Command:
+**Image Build Command:**
 ```
 docker build -t elearn-backend:v1 .
 ```
-Run Docker Container:
+**Run Docker Container:**
 
 ```
 docker run -dit -p 7777:8080 elearn-backend:v1
