@@ -19,20 +19,20 @@ Terraform apne aap samajh jaata hai ki kis resource ko kiske baad create karna h
 
 Suppose hum ek **Azure Storage Account** aur usme ek **Blob Container** create karte hain. Blob container ka creation Storage Account ke baad hi hoga, kyunki container ko account me create karna hai. Terraform automatically yeh dependency samajh lega.
 
-```hcl
+```
 # Azure Storage Account
-resource "azurerm_storage_account" "example" {
-  name                     = "examplestorageacct"
-  resource_group_name       = "example-resources"
-  location                 = "East US"
-  account_tier              = "Standard"
+resource "azurerm_storage_account" "ST-01" {
+  name                     = "dkcstorageaccount001"
+  resource_group_name      = azurerm_resource_group.RG-01.name                             # Implicit dependancy..
+  location                 = azurerm_resource_group.RG-01.location                         # Implicit dependancy..
+  account_tier             = "Standard"
   account_replication_type = "LRS"
 }
 
 # Azure Blob Container
-resource "azurerm_storage_container" "example" {
-  name                  = "example-container"
-  storage_account_name  = azurerm_storage_account.example.name  # This automatically creates a dependency on the Storage Account
+resource "azurerm_storage_container" "STC-01" {
+  name                  = "dkcstoragecontainer0001"
+  storage_account_id    = azurerm_storage_account.ST-01.id                              # This automatically creates a dependency on the Storage Account
   container_access_type = "private"
 }
 ```
@@ -52,22 +52,22 @@ Maan lijiye aapko **Azure Virtual Network** create karna hai, aur phir uske baad
 
 ```hcl
 # Azure Virtual Network
-resource "azurerm_virtual_network" "example" {
-  name                = "example-vnet"
+resource "azurerm_virtual_network" "VN-01" {
+  name                = "vnet-01"
   address_space       = ["10.0.0.0/16"]
   location            = "East US"
-  resource_group_name = "example-resources"
+  resource_group_name = "dk-rg-01"
 }
 
 # Azure Subnet, depends on Virtual Network
-resource "azurerm_subnet" "example" {
-  name                 = "example-subnet"
-  resource_group_name  = "example-resources"
-  virtual_network_name = azurerm_virtual_network.example.name
+resource "azurerm_subnet" "snet-01" {
+  name                 = "subnet-01"
+  resource_group_name  = "dk-rg-01"
+  virtual_network_name = azurerm_virtual_network.VN-01.name
   address_prefixes     = ["10.0.1.0/24"]
 
   depends_on = [
-    azurerm_virtual_network.example  # Explicitly making Subnet dependent on Virtual Network
+    azurerm_virtual_network.VN-01  # Explicitly making Subnet dependent on Virtual Network
   ]
 }
 ```
@@ -84,23 +84,23 @@ Agar aapko ek **Azure Storage Account** aur ek **Azure Key Vault** create karna 
 #### Example: Azure Storage Account and Key Vault with Dependency
 ```hcl
 # Azure Storage Account
-resource "azurerm_storage_account" "example" {
-  name                     = "examplestorageacct"
-  resource_group_name       = "example-resources"
-  location                 = "East US"
-  account_tier              = "Standard"
+resource "azurerm_storage_account" "ST-01" {
+  name                     = "dkcstorageaccount001"
+  resource_group_name      = azurerm_resource_group.RG-01.name                             # Implicit dependancy..
+  location                 = azurerm_resource_group.RG-01.location                         # Implicit dependancy..
+  account_tier             = "Standard"
   account_replication_type = "LRS"
 }
 
 # Azure Key Vault, depends on the Storage Account being created
-resource "azurerm_key_vault" "example" {
-  name                = "examplekeyvault"
+resource "azurerm_key_vault" "KV-01" {
+  name                = "keyvault-01"
   location            = "East US"
-  resource_group_name = "example-resources"
+  resource_group_name = "dk-rg-01"
   sku_name            = "standard"
 
   depends_on = [
-    azurerm_storage_account.example  # Explicit dependency on Storage Account
+    azurerm_storage_account.ST-01  # Explicit dependency on Storage Account
   ]
 }
 ```
@@ -117,26 +117,26 @@ Kabhi-kabhi aapko output values ko use karte hue dependencies set karni padti ha
 #### Example: Output Dependency Between Resources
 ```hcl
 # Azure Storage Account
-resource "azurerm_storage_account" "example" {
-  name                     = "examplestorageacct"
-  resource_group_name       = "example-resources"
-  location                 = "East US"
-  account_tier              = "Standard"
+resource "azurerm_storage_account" "ST-01" {
+  name                     = "dkcstorageaccount001"
+  resource_group_name      = azurerm_resource_group.RG-01.name                             # Implicit dependancy..
+  location                 = azurerm_resource_group.RG-01.location                         # Implicit dependancy..
+  account_tier             = "Standard"
   account_replication_type = "LRS"
 }
 
 # Output of Storage Account ID
 output "storage_account_id" {
-  value = azurerm_storage_account.example.id
+  value = azurerm_storage_account.ST-01.id
 }
 
 # Azure Resource Group, depends on Storage Account ID
-resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
+resource "azurerm_resource_group" "RG-01" {
+  name     = "dk-rg-01"
   location = "East US"
 
   tags = {
-    storage_account_id = azurerm_storage_account.example.id  # Using Storage Account ID here
+    storage_account_id = azurerm_storage_account.ST-01.id  # Using Storage Account ID here
   }
 }
 ```
