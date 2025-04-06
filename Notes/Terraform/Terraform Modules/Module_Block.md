@@ -33,6 +33,8 @@ resource "azurerm_storage_account" "ST-01" {
 }
 ```
 - Create "main.tf" in "parent_module" folder. (a parent module).
+- set source path in parent module's .tf file for child .tf files.
+  
 ```
 terraform {
   required_providers {
