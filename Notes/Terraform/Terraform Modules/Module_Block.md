@@ -15,6 +15,24 @@ az storage container create --account-name dkcstatestrgacct01 --name mystate0190
   
 **Example:**
 
+- Create "myrg.tf" in "azurerm_resource_group" folder. (a child module).
+```
+resource "azurerm_resource_group" "RG-01" {
+  name     = "devops-rg-01"
+  location = "Central India"
+}
+```
+- Create "mystorage.tf" in "azurerm_storage_account" folder. (a child module).
+```
+resource "azurerm_storage_account" "ST-01" {
+  name                     = "dkcstrgacct0190"
+  resource_group_name      = "devops-rg-01"
+  location                 = "Central India"
+  account_tier             = "Standard"
+  account_replication_type = "GRS"
+}
+```
+- Create "main.tf" in "parent_module" folder. (a parent module).
 ```
 terraform {
   required_providers {
@@ -44,4 +62,11 @@ module "ST-01" {
 }
 ```
 
+- after that go parent module path and RUN---
+  
+```
+terraform init
+terraform plan 
+terraform apply
+```
 
