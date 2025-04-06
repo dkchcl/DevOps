@@ -15,14 +15,14 @@ az storage container create --account-name dkcstatestrgacct01 --name mystate0190
   
 **Example:**
 
-- Create "myrg.tf" in "azurerm_resource_group" folder. (a child module).
+- Create "myrg.tf" file in "azurerm_resource_group" folder. (a child module).
 ```
 resource "azurerm_resource_group" "RG-01" {
   name     = "devops-rg-01"
   location = "Central India"
 }
 ```
-- Create "mystorage.tf" in "azurerm_storage_account" folder. (a child module).
+- Create "mystorage.tf" file in "azurerm_storage_account" folder. (a child module).
 ```
 resource "azurerm_storage_account" "ST-01" {
   name                     = "dkcstrgacct0190"
@@ -32,7 +32,7 @@ resource "azurerm_storage_account" "ST-01" {
   account_replication_type = "GRS"
 }
 ```
-- Create "main.tf" in "parent_module" folder. (a parent module).
+- Create "main.tf" file in "parent_module" folder. (a parent module).
 - set source path in parent module's .tf file for child .tf files.
   
 ```
