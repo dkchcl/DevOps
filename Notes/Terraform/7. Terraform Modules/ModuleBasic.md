@@ -7,6 +7,7 @@ when we are configured module blocks & backend block in configuration file and r
 - Installing hashicorp/azurerm v4.26.0...
 - Terraform created a lock file .terraform.lock.hcl
 - Terraform created a directory .terraform
+- .terraform contain ---- 1- providers (terraform-provider-azurerm_v4.26.0_x5.exe).,  2- modules (modules.json file)., 3- terraform.tfstate (local copy)file.
 
 **Example-**
 ```
