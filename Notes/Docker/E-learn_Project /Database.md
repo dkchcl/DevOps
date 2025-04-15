@@ -1,5 +1,5 @@
-
-
+## Elearn DataBase:
+- we following below steps:
 
 ### 1. **`docker pull mysql:8.0`**
 
@@ -72,7 +72,7 @@ Yeh SQL query ek table banayegi jiska naam `Courses` hoga. Table mein 4 columns 
 - **`InstructorName`**: Yeh field course ke instructor ka naam store karegi. Iska bhi `VARCHAR(255)` type hai aur yeh bhi `NOT NULL` hai.
 - **`Lessons`**: Yeh field course ke lessons ko store karegi, aur yeh field `JSON` type ki hogi. Aap ismein lessons ka structured data (like an array of lesson names or topics) store kar sakte hain.
 
-### SHOW TABLES;
+### 7. SHOW TABLES;
 Yeh command aapko current database ke andar jitni bhi tables hain unka list de degi.
 ```
 SHOW TABLES;
@@ -92,7 +92,7 @@ Example output kuch aise ho sakta hai:
 ```
 Is output mein, Courses table dikh raha hai jo aapne create kiya tha.
 
-### 7. **`docker inspect elearn_db`**
+### 8. **`docker inspect elearn_db`**
 
 Yeh command aapko `elearn_db` container ki detailed information de deti hai. Isme aapko pata chalega:
 - Container ka network configuration.
