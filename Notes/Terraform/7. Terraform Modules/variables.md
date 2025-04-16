@@ -1,10 +1,10 @@
 
-
+#### Variables: 
 
 
 
 - parent.tf file in parent folder:
-- 
+   
 ```
 module "azurerm" {
     source = "../resource_group"
