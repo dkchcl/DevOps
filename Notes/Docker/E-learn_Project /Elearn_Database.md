@@ -1,7 +1,7 @@
 ## Elearn DataBase:
 - we following below steps:
 
-  Sure! Here's a fully commented version of your code, explaining each step:
+  Explaining each step:
 
 ```
 # Pull the official MySQL 8.0 image from Docker Hub
