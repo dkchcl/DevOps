@@ -1,6 +1,56 @@
 ## Elearn DataBase:
 - we following below steps:
 
+  Sure! Here's a fully commented version of your code, explaining each step:
+
+```
+# Pull the official MySQL 8.0 image from Docker Hub
+docker pull mysql:8.0
+
+# Run a new MySQL container named 'elearn_db' with:
+# - Root password set to 'Bbpl@#2304'
+# - Port 3306 on the host mapped to port 3306 in the container
+# - Detached mode (-d), running in the background
+docker run --name elearn_db -e MYSQL_ROOT_PASSWORD=Bbpl@#2304 -p 3306:3306 -d mysql:8.0
+
+# Access the running MySQL container's command-line interface
+# - Using root user, prompted to enter the root password
+docker exec -it elearn_db mysql -u root -p
+
+# Inside the MySQL CLI:
+
+# Create a new database named 'elearn_db'
+CREATE DATABASE elearn_db;
+
+# Select the 'elearn_db' database for use
+USE elearn_db;
+
+# Create a table named 'Courses' with the following columns:
+# - CourseId: An auto-incrementing integer, used as the primary key
+# - CourseName: A variable character string up to 255 characters, cannot be null
+# - InstructorName: A variable character string up to 255 characters, cannot be null
+# - Lessons: A JSON field to store lesson details, cannot be null
+CREATE TABLE Courses (
+    CourseId INT AUTO_INCREMENT PRIMARY KEY,
+    CourseName VARCHAR(255) NOT NULL,
+    InstructorName VARCHAR(255) NOT NULL,
+    Lessons JSON NOT NULL
+);
+
+# (This line seems to be an error — maybe you meant to list tables?)
+# Correct command to show all tables in the database:
+SHOW TABLES;
+
+# Back in the host terminal:
+# Inspect the container named 'elearn_db' to get detailed information like:
+# - Configuration
+# - Networking
+# - Volumes
+# - Environment variables, etc.
+docker inspect elearn_db
+```
+
+
 ### 1. **`docker pull mysql:8.0`**
 
 Yeh command Docker Hub se MySQL ka version 8.0 ka image download kar rahi hai. Docker Hub ek public repository hai jahan se aap Docker images ko download kar sakte hain.
