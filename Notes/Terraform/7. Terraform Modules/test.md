@@ -1,6 +1,8 @@
 
 
-## Variable Block:
+## validation Block:
+
+
 ```
 # variable "rg_name" {}
 # variable "rg_location" {
