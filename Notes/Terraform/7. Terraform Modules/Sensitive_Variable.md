@@ -1,3 +1,5 @@
+## Sensitive Variable
+
 Azure me agar aap kisi variable ko **sensitive** declare karna chahte ho — jaise ki Terraform ka use kar rahe ho Azure infrastructure banane ke liye — to aapko variable ko define karte waqt `sensitive = true` likhna hota hai.
 
 Yeh example Terraform ka hai, jo Azure ke saath commonly use hota hai:
