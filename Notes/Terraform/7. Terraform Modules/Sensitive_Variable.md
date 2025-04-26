@@ -107,6 +107,7 @@ variable "resource_group_name" {
 variable "admin_username" {
   default     = "azureuser"
   description = "Admin username"
+  sensitive   = true
 }
 
 variable "admin_password" {
@@ -198,6 +199,7 @@ admin_password = "YourSecurePassword123!"
 ```hcl
 output "vm_username" {
   value = var.admin_username
+  sensitive   = true
 }
 
 output "vm_password" {
