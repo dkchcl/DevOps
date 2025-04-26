@@ -220,3 +220,57 @@ terraform apply
 
 Plan aur apply ke output me password nahi dikhega because it's sensitive — exactly what we want for security. 🔐
 
+## Do you also want to add a Network Security Group (NSG) to allow SSH (port 22) for connecting to the VM?
+
+Awesome! 🔐 Let’s add a **Network Security Group (NSG)** with a rule to allow **SSH (port 22)** — and associate it with the subnet or network interface so you can connect to the VM securely via SSH.
+
+---
+
+### 🛡️ Step-by-step: Add NSG and SSH Rule in `main.tf`
+
+---
+
+#### 🔹 1. Create NSG Resource
+```hcl
+resource "azurerm_network_security_group" "nsg" {
+  name                = "example-nsg"
+  location            = var.location
+  resource_group_name = var.resource_group_name
+
+  security_rule {
+    name                       = "AllowSSH"
+    priority                   = 1001
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "22"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+}
+```
+
+---
+
+#### 🔹 2. Associate NSG with Network Interface (NIC)
+```hcl
+resource "azurerm_network_interface_security_group_association" "nsg_assoc" {
+  network_interface_id      = azurerm_network_interface.nic.id
+  network_security_group_id = azurerm_network_security_group.nsg.id
+}
+```
+
+> ✅ This ensures the NSG applies directly to the VM's network interface.
+
+---
+
+### ✅ You're all set!
+
+Now after `terraform apply`, you’ll be able to SSH into the VM using the dynamic public IP (from the output), like this:
+
+```bash
+ssh azureuser@<public_ip_address>
+```
+
+(Replace `azureuser` and use your actual public IP from the Terraform output.)
