@@ -4,13 +4,6 @@
 
 
 ```
-# variable "rg_name" {}
-# variable "rg_location" {
-#     description = "The location where the resource group will be created."
-#     type        = string
-#     default     = "East US"
-# }
-
 variable "rg_name" {
   description = "Name of the resource group"
   type        = string
@@ -19,12 +12,12 @@ variable "rg_name" {
 #     condition     = length(regexall("^[a-z0-9-_]+$", var.rg_name)) > 0
 #     error_message = "Resource group name must be lowercase and can include numbers, dashes, and underscores only."
 #   }
+# --------------OR -----------
  validation {
    condition     = can(regex("^[a-z0-9-_]+$", var.rg_name)) && length(var.rg_name) >= 5
    error_message = "Resource group name must be lowercase, at least 3 characters, and can include numbers, dashes, and underscores only."
  }
 }
-
 
 variable "rg_location" {
   description = "Azure region"
@@ -36,6 +29,7 @@ variable "rg_location" {
   }
 }
 ```
+
 ## RG Block:
 
 ```
