@@ -140,3 +140,43 @@ Terraform will perform the following actions:
 
 Plan: 4 to add, 0 to change, 0 to destroy.
 ```
+## 4---
+- variable.tf
+```
+variable "rg_name" {
+    type = list(string)
+    default = ["dkc-dev", "dkc-test", "dkc-prod"]
+}
+variable "rg_location" {
+    default = "eastus"
+    type = string
+}
+```
+- resource.tf
+```
+resource "azurerm_resource_group" "RG" {
+  name     = var.rg_name[2]
+  location = var.rg_location
+ }
+```
+```
+PS D:\DevOps Notes\my_codes\Terraform\Module\Variables> terraform plan   
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:  
+  + create
+
+Terraform will perform the following actions:
+
+  # azurerm_resource_group.RG will be created
+  + resource "azurerm_resource_group" "RG" {
+      + id       = (known after apply)
+      + location = "eastus"
+      + name     = "dkc-prod"
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+```
+
+
+
+
