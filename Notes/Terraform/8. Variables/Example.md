@@ -178,6 +178,61 @@ Plan: 1 to add, 0 to change, 0 to destroy.
 ```
 ## 5---
 
+```
+variable "rg_name" {
+  description = "Name of the resource group"
+  type        = list(any)
+  default     = ["dkc-rg-01", "dkc-rg-02", "dkc-rg-03", "dkc-rg-04", "dkc-rg-05"]
+}
+```
+```
+resource "azurerm_resource_group" "RG" {
+  count    = 4
+  name     = var.rg_name[count.index]
+  location = "westus"
+}
+```
+```
+PS D:\My_Code\Terraform\Variables\RG_Meta> terraform plan
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # azurerm_resource_group.RG[0] will be created
+  + resource "azurerm_resource_group" "RG" {
+      + id       = (known after apply)
+      + location = "westus"
+      + name     = "dkc-rg-01"
+    }
+
+  # azurerm_resource_group.RG[1] will be created
+  + resource "azurerm_resource_group" "RG" {
+      + id       = (known after apply)
+      + location = "westus"
+      + name     = "dkc-rg-02"
+    }
+
+  # azurerm_resource_group.RG[2] will be created
+  + resource "azurerm_resource_group" "RG" {
+      + id       = (known after apply)
+      + location = "westus"
+      + name     = "dkc-rg-03"
+    }
+
+  # azurerm_resource_group.RG[3] will be created
+  + resource "azurerm_resource_group" "RG" {
+      + id       = (known after apply)
+      + location = "westus"
+      + name     = "dkc-rg-04"
+    }
+
+Plan: 4 to add, 0 to change, 0 to destroy.
+```
+
+## 6---
+
 - varialbe.tf
 ```
 variable "rg_name" {
