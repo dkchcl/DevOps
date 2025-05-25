@@ -1,0 +1,131 @@
+Bilkul bhai, main tujhe har ek command simple Hindi mein **example ke sath** samjha deta hoon. Ye commands mostly tab use hoti hain jab tu ek **nayi Git repo bana ke usko GitHub pe push** kar raha hota hai.
+
+```
+    git init
+    git remote add origin https://github.com/dkchcl/raju.git
+    git pull origin main --allow-unrelated-histories
+    git add .
+    git commit -m "Initial commit"
+    git branch -M main
+    git push -u origin main
+```
+---
+
+### 1. `git init`
+
+🔹 **Kya karta hai?**
+Is command se teri local directory Git repo ban jaati hai. Matlab Git is folder ko track karna start karta hai.
+
+🔹 **Example:**
+Maan le tere paas ek folder hai `myproject`:
+
+```bash
+cd myproject
+git init
+```
+
+Ab `myproject` ek Git repo ban gaya hai.
+
+---
+
+### 2. `git remote add origin https://github.com/dkchcl/raju.git`
+
+🔹 **Kya karta hai?**
+Ye GitHub wali repo ko teri local repo ke sath jodta hai. `"origin"` naam ka ek remote banata hai jo GitHub wale URL ko point karta hai.
+
+🔹 **Example:**
+
+```bash
+git remote add origin https://github.com/dkchcl/raju.git
+```
+
+Ab agar tu `git push origin` karega to code us GitHub repo me jayega.
+
+---
+
+### 3. `git pull origin main --allow-unrelated-histories`
+
+🔹 **Kya karta hai?**
+Agar teri local repo aur GitHub repo dono me **alag histories** hain (e.g. dono alag-alag banaaye gaye), to normally Git pull error dega. Ye command us conflict ko ignore karke dono repos ko merge kar deta hai.
+
+🔹 **Example:**
+
+```bash
+git pull origin main --allow-unrelated-histories
+```
+
+Ye GitHub pe `main` branch se code khinchta hai aur local repo me merge karta hai.
+
+---
+
+### 4. `git add .`
+
+🔹 **Kya karta hai?**
+Sabhi naye/modified files ko staging area me daalta hai — matlab Git ko batata hai ki ye files commit hone ke liye ready hain.
+
+🔹 **Example:**
+
+```bash
+git add .
+```
+
+`.` ka matlab hai "sabhi files".
+
+---
+
+### 5. `git commit -m "Initial commit"`
+
+🔹 **Kya karta hai?**
+Ye staged files ka snapshot bana ke Git me save karta hai. `"Initial commit"` message me likha hota hai ki ye commit kis liye kiya.
+
+🔹 **Example:**
+
+```bash
+git commit -m "Initial commit"
+```
+
+---
+
+### 6. `git branch -M main`
+
+🔹 **Kya karta hai?**
+Ye current branch ka naam `main` rakh deta hai. Agar pehle se `master` hai to uska naam badal ke `main` kar deta hai.
+
+🔹 **Example:**
+
+```bash
+git branch -M main
+```
+
+Ab teri primary branch ka naam `main` hai.
+
+---
+
+### 7. `git push -u origin main`
+
+🔹 **Kya karta hai?**
+Ye teri local `main` branch ko GitHub pe `origin/main` branch me bhejta hai aur future ke liye tracking set kar deta hai.
+
+🔹 **Example:**
+
+```bash
+git push -u origin main
+```
+
+Ab `git push` likhne se default `origin main` me hi push hoga.
+
+---
+
+### 🧠 Summary (Short Steps):
+
+1. Git repo banao → `git init`
+2. GitHub repo se jodo → `git remote add origin <url>`
+3. GitHub se code merge karo → `git pull origin main --allow-unrelated-histories`
+4. Files stage karo → `git add .`
+5. Commit banao → `git commit -m "message"`
+6. Branch ka naam set karo → `git branch -M main`
+7. Push karo → `git push -u origin main`
+
+---
+
+Agar tu chahe to main is sabka **step-by-step practical demo** bhi bana ke de sakta hoon kisi project folder ke sath.
