@@ -1,3 +1,6 @@
+## Upload From Local To Git (New local folder to New repo) ----
+
+```
 PS D:\DevOps Notes\GitHubAction\new_code> git init 
 Initialized empty Git repository in D:/DevOps Notes/GitHubAction/new_code/.git/
 PS D:\DevOps Notes\GitHubAction\new_code> git add .
@@ -25,3 +28,4 @@ To https://github.com/dkchcl/test.git
  * [new branch]      main -> main
 branch 'main' set up to track 'origin/main'.
 PS D:\DevOps Notes\GitHubAction\new_code> 
+```
