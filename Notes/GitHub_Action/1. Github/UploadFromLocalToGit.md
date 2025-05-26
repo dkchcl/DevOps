@@ -1,5 +1,14 @@
 ## Upload From Local To Git (New local folder to New GitHub repo) ----
 
+```
+    git init
+    git add .
+    git commit -m "add readme"
+    git remote add origin https://github.com/dkchcl/raju.git
+    git branch -M main
+    git push -u origin main
+```
+
 ### Steps:
 
 ```
