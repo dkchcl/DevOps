@@ -129,4 +129,180 @@ git restore test.txt  # Agar file abhi tracked ho
 
 ---
 
-Agar tum chaho to main ek chhota demo repo bana ke dikha sakta hoon step-by-step command ke sath. Bolo to shuru karte hain!
+## 2
+
+Shandar! Chalo ek chhota Git demo banate hain step-by-step. Tum yeh commands **terminal** ya **Git Bash** me chala sakte ho.
+
+---
+
+## 🧪 Step-by-Step Git Demo
+
+### ✅ Step 1: Ek naya folder banao aur Git repo init karo
+
+```bash
+mkdir git-demo
+cd git-demo
+git init
+```
+
+---
+
+### ✅ Step 2: Ek nayi file banao
+
+```bash
+echo "Hello world" > file.txt
+```
+
+### ✅ Step 3: File ko Git mein add karo aur commit karo
+
+```bash
+git add file.txt
+git commit -m "Add file.txt"
+```
+
+---
+
+### ✅ Step 4: File mein kuch changes karo
+
+```bash
+echo "New line added" >> file.txt
+```
+
+Agar tum dekhna chahte ho ki kya changes hue:
+
+```bash
+git status
+git diff
+```
+
+---
+
+### ✅ Step 5: Changes ko undo karo (restore)
+
+```bash
+git restore file.txt
+```
+
+Ab file wapas waise ho jaayegi jaise last commit mein thi.
+
+---
+
+### ✅ Step 6: Ab file ko Git se hata do
+
+```bash
+git rm file.txt
+git commit -m "Remove file.txt"
+```
+
+---
+
+### ✅ Step 7: Git log se history dekho
+
+```bash
+git log
+```
+
+Agar short form mein dekhna chaho:
+
+```bash
+git log --oneline
+```
+
+---
+
+## 📋 Summary Table
+
+| Command       | Kya karta hai                                    |
+| ------------- | ------------------------------------------------ |
+| `git init`    | Naya Git repo shuru karta hai                    |
+| `git add`     | File ko staging mein laata hai                   |
+| `git commit`  | Changes ko save karta hai (snapshot)             |
+| `git rm`      | File ko repo aur folder dono se delete karta hai |
+| `git restore` | Changes ko undo karta hai                        |
+| `git log`     | History dikhata hai                              |
+
+---
+## 3
+
+Bilkul bhai! `git rm --cached notes.txt` ek **bahut important aur commonly used command** hai, khaaskar jab humein koi file Git repository se hataani hoti hai **lekin apne system (working directory)** mein rakhni hoti hai.
+
+Chalo isse **detail mein samajhte hain** 👇
+
+---
+
+## 🔹 `git rm --cached notes.txt` — File ko **Git ke tracking se hataana**, local se nahi
+
+### 📌 Kya karta hai:
+
+* File ko **Git ke repo se hataata hai** (yaani ab Git us file ko track nahi karega).
+* **Lekin tumhare local folder se file delete nahi hoti.** 😎
+* Yeh command kaafi useful hai jab tum **galti se koi private ya unnecessary file Git mein add kar dete ho** jaise `.env`, `node_modules`, `logs`, etc.
+
+---
+
+### 🧠 Soch samajh ke use:
+
+```bash
+git rm --cached notes.txt
+```
+
+* `--cached` flag ka matlab: *Sirf staging area se hatao, working directory se nahi*.
+* Commit karne ke baad Git sochta hai: "Is file ko future commits mein ignore karo."
+
+---
+
+### 🧪 Practical Example:
+
+#### 1. Tumne galti se `notes.txt` file ko add kar diya Git mein:
+
+```bash
+echo "My secret notes" > notes.txt
+git add notes.txt
+git commit -m "Added notes.txt"
+```
+
+Ab yeh file Git mein chali gayi hai ❌ (maan lo yeh private info thi).
+
+#### 2. Ab tum chahte ho ki Git is file ko track na kare, lekin file delete bhi na ho:
+
+```bash
+git rm --cached notes.txt
+git commit -m "Untracked notes.txt"
+```
+
+> ✅ Ab file tumhare system mein to rahegi, lekin Git usko track nahi karega.
+
+#### 3. Future mein agar tum chahte ho ki Git dubara isko kabhi bhi track na kare:
+
+```bash
+echo "notes.txt" >> .gitignore
+```
+
+---
+
+### ✅ Use Cases:
+
+| Scenario                                            | `git rm` | `git rm --cached`     |
+| --------------------------------------------------- | -------- | --------------------- |
+| File repo se bhi hataani hai aur local se bhi       | ✔️ Yes   | ❌ No                  |
+| File repo se hataani hai, par local mein rakhni hai | ❌ No     | ✔️ Yes                |
+| File ko future tracking se bachana hai              | ❌ No     | ✔️ Yes + `.gitignore` |
+
+---
+
+## 🔐 Real-world example:
+
+Tumne `config.env` Git mein daal diya tha jisme passwords hain. Galti ho gayi.
+
+```bash
+git rm --cached config.env
+echo "config.env" >> .gitignore
+git commit -am "Remove config.env from Git and add to .gitignore"
+```
+
+Done! Git ab us file ko bhool jaayega, lekin tumhare paas local mein safe rahegi.
+
+---
+
+
+
