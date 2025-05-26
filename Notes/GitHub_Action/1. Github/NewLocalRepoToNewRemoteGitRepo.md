@@ -1,4 +1,4 @@
-## Upload From Local To Git (New local folder to New GitHub repo) ----
+## Upload From Local To Git (New local folder to New Remote GitHub repo)- Second Tarika ----
 
 ```
     git init
