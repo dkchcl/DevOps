@@ -12,6 +12,7 @@
     git push -u origin main
 ```
 ---
+### Steps:
 
 ### 1. `git init`
 
