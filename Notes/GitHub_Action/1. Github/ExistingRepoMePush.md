@@ -1,4 +1,6 @@
-Bilkul bhai, main tujhe har ek command simple Hindi mein **example ke sath** samjha deta hoon. Ye commands mostly tab use hoti hain jab tu ek **nayi Git repo bana ke usko GitHub pe push** kar raha hota hai.
+## Existing Repo Me Push ---
+
+- Ye commands mostly tab use hoti hain jab tu ek **nayi Git repo bana ke usko GitHub pe push** kar raha hota hai.
 
 ```
     git init
