@@ -1,4 +1,6 @@
-## Upload From Local To Git (New local folder to New repo) ----
+## Upload From Local To Git (New local folder to New GitHub repo) ----
+
+### Steps:
 
 ```
 PS D:\DevOps Notes\GitHubAction\new_code> git init 
