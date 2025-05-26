@@ -1,6 +1,6 @@
-## Existing Repo Me Push ---
+## Local se Existing GitHub Repo Me Push Karna ---
 
-- Ye commands mostly tab use hoti hain jab tu ek **nayi Git repo bana ke usko GitHub pe push** kar raha hota hai.
+- Ye commands mostly tab use hoti hain jab tu ek **nayi Git repo bana ke usko GitHub(Existing repo) pe push** kar raha hota hai.
 
 ```
     git init
@@ -130,4 +130,3 @@ Ab `git push` likhne se default `origin main` me hi push hoga.
 
 ---
 
-Agar tu chahe to main is sabka **step-by-step practical demo** bhi bana ke de sakta hoon kisi project folder ke sath.
