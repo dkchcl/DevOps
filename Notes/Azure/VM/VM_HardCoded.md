@@ -1,4 +1,4 @@
-Bilkul bhai! Neeche main tera **final full Terraform code** de raha hoon — sab kuch hardcoded hai, aur ye include karta hai:
+## VM Code sab kuch hardcoded hai, aur ye include karta hai:
 
 ✅ Resource Group
 ✅ Virtual Network
@@ -161,4 +161,4 @@ Replace `<output_ip_here>` with the IP shown after `terraform apply`.
 
 ---
 
-Bhai agar tu chahta hai main isko `.tf` file structure me split karun (e.g. `main.tf`, `outputs.tf`, `nsg.tf`), to wo bhi kar deta hoon. Let me know!
+
