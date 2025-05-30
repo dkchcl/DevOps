@@ -1,3 +1,6 @@
+
+### Root Modules--
+
 **Main.tf**
 ```
 module "resource_group" {
@@ -123,6 +126,39 @@ variable "admin_password" {}
 variable "image_publisher" {}
 variable "image_offer" {}
 variable "image_sku" {}
+```
+### Child Modules--
+
+**nic_module** - **nic.tf**
+```
+resource "azurerm_network_interface" "nic" {
+  name                = var.nic_name
+  location            = var.location
+  resource_group_name = var.resource_group_name
+  
+  ip_configuration {
+    name                          = "internal"
+    private_ip_address_allocation = "Dynamic"
+    subnet_id             = var.subnet_id
+    public_ip_address_id  = var.public_ip_id
+  }
+}
+```
+**varialbe**
+```
+variable "resource_group_name" {}
+variable "location" {}
+variable "nic_name" {}
+variable "subnet_name" {}
+variable "public_ip_name" {}
+variable "subnet_id" {}
+variable "public_ip_id" {}
+```
+**output**
+```
+output "nic_id" {
+  value = azurerm_network_interface.nic.id
+}
 ```
 
 
