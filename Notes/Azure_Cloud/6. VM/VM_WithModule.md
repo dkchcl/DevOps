@@ -160,6 +160,45 @@ output "nic_id" {
   value = azurerm_network_interface.nic.id
 }
 ```
+**nsg_module** - **nsg.tf**
+```
+resource "azurerm_network_security_group" "nsg" {
+  name                = var.nsg_name
+  location            = var.location
+  resource_group_name = var.resource_group_name
+}
+```
+**variable.tf**
+```
+variable "resource_group_name" {}
+variable "location" {}
+variable "nsg_name" {}
+```
+**output.tf**
+```
+output "nsg_id" {
+  value = azurerm_network_security_group.nsg.id
+}
+```
+**nsg_assoc_module** - **nsg_assoc.tf**
+```
+resource "azurerm_subnet_network_security_group_association" "nsg_assoc" {
+  subnet_id                 = var.subnet_id
+network_security_group_id = var.nsg_id
+}
+```
+**variable.tf**
+```
+variable "subnet_id" {}
+variable "nsg_id" {}
+```
+**output_module** - **output.tf**
+```
+output "vm_public_ip" {
+  value = azurerm_public_ip.public_ip.ip_address
+}
+```
+
 
 
 
