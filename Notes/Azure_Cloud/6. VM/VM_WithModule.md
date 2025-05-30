@@ -198,6 +198,146 @@ output "vm_public_ip" {
   value = azurerm_public_ip.public_ip.ip_address
 }
 ```
+**publicIP_module** - **publicIP.tf**
+```
+resource "azurerm_public_ip" "public_ip" {
+  name                = var.public_ip_name
+  location            = var.location
+  resource_group_name = var.resource_group_name
+  allocation_method   = "Dynamic"
+  sku                 = "Basic"
+}
+```
+**variable.tf**
+```
+variable "resource_group_name" {}
+variable "location" {}
+variable "public_ip_name" {}
+```
+**output.tf**
+```
+output "public_ip_id" {
+  value = azurerm_public_ip.public_ip.id
+}
+
+output "public_ip_address" {
+  value = azurerm_public_ip.public_ip.ip_address
+}
+```
+**resource_group_module** - **resoure.group.tf**
+```
+resource "azurerm_resource_group" "rg" {
+  name     = var.resource_group_name
+  location = var.location
+}
+```
+**variable.tf**
+```
+variable "resource_group_name" {}
+variable "location" {}
+```
+**ssh_module** - **ssh.tf**
+```
+resource "azurerm_network_security_rule" "ssh" {
+  name                        = "allow-ssh"
+  priority                    = 1001
+  direction                   = "Inbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
+  destination_port_range      = "22"
+  source_address_prefix       = "*"
+  destination_address_prefix  = "*"
+  resource_group_name         = var.resource_group_name
+  network_security_group_name = azurerm_network_security_group.nsg.name
+}
+```
+**variable.tf**
+```
+variable "resource_group_name" {}
+variable "nsg_name" {}
+```
+**subnet_module** - **subnet.tf**
+```
+resource "azurerm_subnet" "subnet" {
+  name                 = var.subnet_name
+  resource_group_name  = var.resource_group_name
+  virtual_network_name = var.vnet_name
+  address_prefixes     = [var.subnet_address_prefix]
+}
+```
+**variable.tf**
+```
+variable "resource_group_name" {}
+variable "vnet_name" {}
+variable "subnet_name" {}
+variable "subnet_address_prefix" {}
+```
+**output.tf**
+```
+output "subnet_id" {
+  value = azurerm_subnet.subnet.id
+}
+```
+**VM_Module** - **vm.tf**
+```
+resource "azurerm_linux_virtual_machine" "vm" {
+  name                            = var.vm_name
+  resource_group_name             = var.resource_group_name
+  location                        = var.location
+  size                            = var.vm_size
+  admin_username                  = var.admin_username
+  admin_password                  = var.admin_password
+  disable_password_authentication = false
+
+  network_interface_ids = [var.nic_id]
+
+  os_disk {
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+  }
+
+  source_image_reference {
+    publisher = var.image_publisher
+    offer     = var.image_offer
+    sku       = var.image_sku
+    version   = "latest"
+  }
+}
+```
+**variable.tf**
+```
+variable "resource_group_name" {}
+variable "location" {}
+variable "nic_name" {}
+
+variable "nic_id" {}
+variable "vm_name" {}
+variable "vm_size" {}
+variable "admin_username" {}
+variable "admin_password" {}
+
+# Image info
+variable "image_publisher" {}
+variable "image_offer" {}
+variable "image_sku" {}
+```
+**virtual_network_module** - **virtual_network.tf**
+```
+resource "azurerm_virtual_network" "vnet" {
+  name                = var.vnet_name
+  address_space       = [var.vnet_address_space]
+  location            = var.location
+  resource_group_name = var.resource_group_name
+}
+```
+**variable.tf**
+```
+variable "resource_group_name" {}
+variable "location" {}
+variable "vnet_name" {}
+variable "vnet_address_space" {}
+```
 
 
 
