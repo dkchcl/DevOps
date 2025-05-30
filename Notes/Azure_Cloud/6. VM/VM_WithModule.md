@@ -341,15 +341,30 @@ variable "vnet_name" {}
 variable "vnet_address_space" {}
 ```
 
-
-
-
-
-## Chalo ek ek block ko **detail mein samajhte hain**, line-by-line:
+## **Root modules + Child modules** — ka **line-by-line aur module-by-module explanation**:
 
 ---
 
-### 🔹 Module: `resource_group`
+## 🔷 **Overview**:
+
+Ye Terraform code Azure mein ek **Virtual Machine (VM)** deploy karta hai, uske sath:
+
+* Resource Group
+* Virtual Network
+* Subnet
+* NSG (Network Security Group)
+* NSG-Subnet Association
+* Public IP
+* NIC (Network Interface Card)
+* VM
+
+Sab kuch **modular architecture** mein hai — har component ke liye ek **child module** banaya gaya hai.
+
+---
+
+# 🔷 **ROOT MODULE** (`main.tf`)
+
+### ✅ `module "resource_group"` – Resource Group
 
 ```hcl
 module "resource_group" {
@@ -359,18 +374,12 @@ module "resource_group" {
 }
 ```
 
-✅ **Kya karta hai?**
-
-* Yeh module Azure mein ek **Resource Group** create karta hai.
-* `source = "../Resource_Group"` ka matlab hai ki ye module ka code `../Resource_Group` folder mein hai.
-* Variables:
-
-  * `resource_group_name`: RG ka naam
-  * `location`: RG ki Azure region (e.g., `eastus`)
+➡ Ye module Azure mein ek **resource group** banata hai.
+➡ Resource group har resource ko logically group karta hai.
 
 ---
 
-### 🔹 Module: `virtual_network`
+### ✅ `module "virtual_network"` – Virtual Network
 
 ```hcl
 module "virtual_network" {
@@ -383,15 +392,13 @@ module "virtual_network" {
 }
 ```
 
-✅ **Kya karta hai?**
-
-* Ek **Virtual Network (VNet)** create karta hai.
-* `depends_on` ensures ki pehle Resource Group ban jaye.
-* `vnet_address_space` jaise: `["10.0.0.0/16"]`
+➡ Ek **VNet** create karta hai jisme VM ka subnet hoga.
+➡ VNet address space `10.0.0.0/16` diya gaya hai.
+➡ `depends_on` ensure karta hai ki pehle resource group ban jaye.
 
 ---
 
-### 🔹 Module: `subnet`
+### ✅ `module "subnet"` – Subnet
 
 ```hcl
 module "subnet" {
@@ -404,15 +411,12 @@ module "subnet" {
 }
 ```
 
-✅ **Kya karta hai?**
-
-* VNet ke andar ek **Subnet** banata hai.
-* Depends on Virtual Network (matlab VNet pehle banna chahiye).
-* `subnet_address_prefix`: subnet ke liye address space (e.g., `10.0.1.0/24`)
+➡ Ye module VNet ke andar **subnet** banata hai.
+➡ Subnet ka IP range hai `10.0.2.0/24`.
 
 ---
 
-### 🔹 Module: `nsg` (Network Security Group)
+### ✅ `module "nsg"` – Network Security Group
 
 ```hcl
 module "nsg" {
@@ -424,14 +428,12 @@ module "nsg" {
 }
 ```
 
-✅ **Kya karta hai?**
-
-* **NSG** banata hai jo ki traffic filtering ke liye use hota hai (firewall jaisa).
-* Isme inbound/outbound rules define kiye ja sakte hain.
+➡ NSG banata hai jo firewall ki tarah kaam karta hai.
+➡ Inbound/Outbound traffic control karta hai.
 
 ---
 
-### 🔹 Module: `subnet_nsg_assoc`
+### ✅ `module "subnet_nsg_assoc"` – NSG & Subnet Link
 
 ```hcl
 module "subnet_nsg_assoc" {
@@ -442,15 +444,11 @@ module "subnet_nsg_assoc" {
 }
 ```
 
-✅ **Kya karta hai?**
-
-* **NSG ko subnet ke saath associate** karta hai.
-* `subnet_id`: jisko NSG lagani hai
-* `nsg_id`: jo NSG lagani hai
+➡ NSG ko subnet ke sath associate karta hai — taaki NSG rules apply ho subnet pe.
 
 ---
 
-### 🔹 Module: `public_ip`
+### ✅ `module "public_ip"` – Public IP
 
 ```hcl
 module "public_ip" {
@@ -462,13 +460,11 @@ module "public_ip" {
 }
 ```
 
-✅ **Kya karta hai?**
-
-* Ek **Public IP address** allocate karta hai jo VM ko publicly accessible banayega.
+➡ Public IP banata hai jisse VM internet se connect ho sake.
 
 ---
 
-### 🔹 Module: `nic` (Network Interface)
+### ✅ `module "nic"` – Network Interface
 
 ```hcl
 module "nic" {
@@ -484,15 +480,11 @@ module "nic" {
 }
 ```
 
-✅ **Kya karta hai?**
-
-* **NIC (Network Interface Card)** create karta hai.
-* NIC ka use VM ko subnet aur IP se connect karne ke liye hota hai.
-* Is NIC mein public IP bhi attach hota hai, isliye VM internet se accessible hota hai.
+➡ Ye module **NIC** banata hai — Network Interface, jo VM ko subnet & public IP se connect karta hai.
 
 ---
 
-### 🔹 Module: `vm` (Virtual Machine)
+### ✅ `module "vm"` – Virtual Machine
 
 ```hcl
 module "vm" {
@@ -512,16 +504,12 @@ module "vm" {
 }
 ```
 
-✅ **Kya karta hai?**
-
-* Azure mein **Virtual Machine** create karta hai.
-* Ye NIC ke through subnet se connected hoti hai.
-* Image info (e.g., Ubuntu, Windows) `publisher`, `offer`, `sku` se define hota hai.
-* Admin credentials: `admin_username` and `admin_password`
+➡ Azure pe **Linux VM create** karta hai.
+➡ Isme NIC attach hoti hai, OS image (Ubuntu) set hoti hai, aur credentials diye jate hain.
 
 ---
 
-### 🔹 Output Block
+### ✅ Output – VM ka Public IP
 
 ```hcl
 output "vm_public_ip" {
@@ -529,24 +517,169 @@ output "vm_public_ip" {
 }
 ```
 
-✅ **Kya karta hai?**
-
-* Terraform ke output mein VM ka **Public IP address** print karega.
-* Useful hai jab aap deployment ke baad IP dekhna chahein.
+➡ Ye output dikhata hai VM ka **public IP address** after apply.
 
 ---
 
-## 🔁 Dependency Graph (Order of Creation)
-
-1. Resource Group
-2. VNet
-3. Subnet
-4. NSG
-5. NSG to Subnet Association
-6. Public IP
-7. NIC (uses subnet & public IP)
-8. VM (uses NIC)
-9. Output public IP
+# 🔷 **CHILD MODULES EXPLAINED**
 
 ---
+
+## ✅ 1. `Resource_Group` Module
+
+**File: `resoure.group.tf`**
+
+```hcl
+resource "azurerm_resource_group" "rg" {
+  name     = var.resource_group_name
+  location = var.location
+}
+```
+
+➡ Azure Resource Group create karta hai.
+
+---
+
+## ✅ 2. `Virtual_Network` Module
+
+```hcl
+resource "azurerm_virtual_network" "vnet" {
+  name                = var.vnet_name
+  address_space       = [var.vnet_address_space]
+  location            = var.location
+  resource_group_name = var.resource_group_name
+}
+```
+
+➡ VNet banata hai jisme IP address range define hota hai.
+
+---
+
+## ✅ 3. `Subnet` Module
+
+```hcl
+resource "azurerm_subnet" "subnet" {
+  name                 = var.subnet_name
+  resource_group_name  = var.resource_group_name
+  virtual_network_name = var.vnet_name
+  address_prefixes     = [var.subnet_address_prefix]
+}
+```
+
+➡ VNet ke andar Subnet banata hai.
+
+---
+
+## ✅ 4. `NSG` Module
+
+```hcl
+resource "azurerm_network_security_group" "nsg" {
+  name                = var.nsg_name
+  location            = var.location
+  resource_group_name = var.resource_group_name
+}
+```
+
+➡ NSG create karta hai — rules baad mein add kar sakte ho.
+
+---
+
+## ✅ 5. `NSG_Assoc` Module
+
+```hcl
+resource "azurerm_subnet_network_security_group_association" "nsg_assoc" {
+  subnet_id                 = var.subnet_id
+  network_security_group_id = var.nsg_id
+}
+```
+
+➡ NSG ko Subnet se link karta hai.
+
+---
+
+## ✅ 6. `Public_IP` Module
+
+```hcl
+resource "azurerm_public_ip" "public_ip" {
+  name                = var.public_ip_name
+  location            = var.location
+  resource_group_name = var.resource_group_name
+  allocation_method   = "Dynamic"
+  sku                 = "Basic"
+}
+```
+
+➡ Dynamic Public IP create karta hai — iska address deploy ke baad milta hai.
+
+---
+
+## ✅ 7. `NIC` Module
+
+```hcl
+resource "azurerm_network_interface" "nic" {
+  name                = var.nic_name
+  location            = var.location
+  resource_group_name = var.resource_group_name
+
+  ip_configuration {
+    name                          = "internal"
+    private_ip_address_allocation = "Dynamic"
+    subnet_id                     = var.subnet_id
+    public_ip_address_id          = var.public_ip_id
+  }
+}
+```
+
+➡ Network Interface create karta hai jo VM ke IP setup ko manage karta hai. Subnet aur Public IP se linked hota hai.
+
+---
+
+## ✅ 8. `Virtual_Machine` Module
+
+```hcl
+resource "azurerm_linux_virtual_machine" "vm" {
+  name                            = var.vm_name
+  resource_group_name             = var.resource_group_name
+  location                        = var.location
+  size                            = var.vm_size
+  admin_username                  = var.admin_username
+  admin_password                  = var.admin_password
+  disable_password_authentication = false
+
+  network_interface_ids = [var.nic_id]
+
+  os_disk {
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+  }
+
+  source_image_reference {
+    publisher = var.image_publisher
+    offer     = var.image_offer
+    sku       = var.image_sku
+    version   = "latest"
+  }
+}
+```
+
+➡ Actual VM create karta hai Ubuntu OS ke sath.
+
+---
+
+## ✅ 9. `SSH Rule` Module (Optional NSG rule)
+
+```hcl
+resource "azurerm_network_security_rule" "ssh" {
+  name                        = "allow-ssh"
+  priority                    = 1001
+  direction                   = "Inbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
+  destination_port_range      = "22"
+  source_address_prefix       = "*"
+  destination_address_prefix  = "*"
+  resource_group_name         = var.resource_group_name
+  network_security_group_name
+```
 
