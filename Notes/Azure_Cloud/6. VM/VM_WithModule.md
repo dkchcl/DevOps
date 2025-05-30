@@ -1,3 +1,133 @@
+**Main.tf**
+```
+module "resource_group" {
+  source = "../Resource_Group"
+  resource_group_name = var.resource_group_name
+  location = var.location
+}
+
+module "virtual_network" {
+  source = "../Virtual_Network"
+  depends_on = [ module.resource_group ]
+  resource_group_name = var.resource_group_name
+  location = var.location
+  vnet_name = var.vnet_name
+  vnet_address_space = var.vnet_address_space 
+}
+
+module "subnet" {
+  source = "../Subnet"
+  depends_on = [ module.virtual_network ]
+  vnet_name = var.vnet_name
+  resource_group_name = var.resource_group_name
+  subnet_name = var.subnet_name
+  subnet_address_prefix = var.subnet_address_prefix
+}
+
+module "nsg" {
+  source = "../NSG"
+  depends_on = [ module.resource_group ]
+  resource_group_name = var.resource_group_name
+  location = var.location
+  nsg_name = var.nsg_name
+}
+
+module "subnet_nsg_assoc" {
+  source = "../NSG_Assoc"
+  depends_on = [ module.nsg ]
+  subnet_id = module.subnet.subnet_id
+  nsg_id    = module.nsg.nsg_id
+}
+
+module "public_ip" {
+  source = "../Public_IP"
+  depends_on = [ module.resource_group ]
+  resource_group_name = var.resource_group_name
+  location = var.location
+  public_ip_name = var.public_ip_name
+}
+module "nic" {
+  source = "../NIC"
+  depends_on = [ module.subnet ,module.nsg ]
+  resource_group_name = var.resource_group_name
+  location = var.location
+  nic_name = var.nic_name
+  subnet_name = var.subnet_name
+  public_ip_name = var.public_ip_name
+  subnet_id        = module.subnet.subnet_id
+  public_ip_id     = module.public_ip.public_ip_id
+
+}
+module "vm" {
+  source = "../Virtual_Machine"
+  depends_on = [ module.nic , module.resource_group ]
+  resource_group_name = var.resource_group_name
+  location = var.location
+  nic_name = var.nic_name
+  nic_id = module.nic.nic_id
+  vm_name = var.vm_name
+  vm_size = var.vm_size
+  admin_username = var.admin_username
+  admin_password = var.admin_password
+  image_publisher = var.image_publisher
+  image_offer = var.image_offer
+  image_sku = var.image_sku
+}
+
+output "vm_public_ip" {
+  value = module.public_ip.public_ip_address
+}
+```
+**terraform.tfvars**
+```
+resource_group_name     = "dkc-vm-rg"
+location                = "West Europe"
+vnet_name               = "vnet-vm-01"
+vnet_address_space      = "10.0.0.0/16"
+subnet_name             = "subnet-vm"
+subnet_address_prefix   = "10.0.2.0/24"
+nsg_name                = "vm-nsg"
+public_ip_name          = "vm-public-ip"
+nic_name                = "vm-nic1"
+vm_name                 = "linuxvm"
+vm_size                 = "Standard_F2"
+admin_username          = "adminuser"
+admin_password          = "P@ssw0rd1234!"  # ⚠️ Change in production
+
+# Ubuntu 22.04 LTS Image
+image_publisher = "Canonical"
+image_offer     = "0001-com-ubuntu-server-jammy"
+image_sku       = "22_04-lts"
+```
+**variables.tf**
+```
+variable "resource_group_name" {}
+variable "location" {}
+
+variable "vnet_name" {}
+variable "vnet_address_space" {}
+
+variable "subnet_name" {}
+variable "subnet_address_prefix" {}
+
+variable "nsg_name" {}
+variable "public_ip_name" {}
+variable "nic_name" {}
+
+variable "vm_name" {}
+variable "vm_size" {}
+variable "admin_username" {}
+variable "admin_password" {}
+
+# Image info
+variable "image_publisher" {}
+variable "image_offer" {}
+variable "image_sku" {}
+```
+
+
+
+
 ## Chalo ek ek block ko **detail mein samajhte hain**, line-by-line:
 
 ---
