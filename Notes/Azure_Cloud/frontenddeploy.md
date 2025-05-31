@@ -1,11 +1,11 @@
 for build=----
 
-
-npm install
-
-npm run build
-
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+   7 npm install
+   8 npm run build
+
+
+for copy local to vm------
 
 scp -r D:\My_Code\Terraform\VMs\ToDo_frontend\ReactTodoUIMonolith\build adminuser@40.68.229.133:/home/adminuser
 
