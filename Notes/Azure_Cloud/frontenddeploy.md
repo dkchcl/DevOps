@@ -1,9 +1,9 @@
 for build=----
-
+```
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
-   7 npm install
-   8 npm run build
-
+   npm install
+   npm run build
+```
 
 for copy local to vm------
 
@@ -16,7 +16,7 @@ scp -r D:\My_Code\Terraform\VMs\ToDo_frontend\ReactTodoUIMonolith\build adminuse
 
 
 on VM
-
+```
     6  sudo apt update
     7  sudo apt install nginx
     8  ls
@@ -25,3 +25,4 @@ on VM
    11  ls
    12  rm index.nginx-debian.html
    13  sudo rm index.nginx-debian.html
+```
