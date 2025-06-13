@@ -171,16 +171,13 @@ resource "azurerm_linux_virtual_machine" "vm" {
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   size                = "Standard_B1s"
-  admin_username      = "azureuser"
-
   network_interface_ids = [
     azurerm_network_interface.nic.id,
   ]
 
-  admin_ssh_key {
-    username   = "azureuser"
-    public_key = file("~/.ssh/id_rsa.pub")
-  }
+  admin_username                  = "azureuser"
+  admin_password                  = "P@ssword1234!"  # Use strong password
+  disable_password_authentication = false
 
   os_disk {
     caching              = "ReadWrite"
