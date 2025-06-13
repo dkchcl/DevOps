@@ -123,7 +123,8 @@ resource "azurerm_public_ip" "public_ip" {
   name                = "example-pip"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  allocation_method   = "Dynamic"
+  allocation_method   = "Dynamic"         # IP assigned dynamically
+  sku                 = "Basic"           # Basic SKU allows Dynamic IP
 }
 
 # 5. NSG
@@ -187,8 +188,8 @@ resource "azurerm_linux_virtual_machine" "vm" {
 
   source_image_reference {
     publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "18.04-LTS"
+    offer     = "0001-com-ubuntu-server-focal"
+    sku       = "20_04-lts"
     version   = "latest"
   }
 }
@@ -229,6 +230,3 @@ terraform apply
 
 ---
 
-Agar tu chaahe to main ye same code **Windows VM ke liye**, ya **multiple VMs with loop**, ya **auto provisioning script** ke sath bhi de sakta hoon.
-
-Bata agar aur bhi detail chahiye ya kisi part me confusion ho 💡
