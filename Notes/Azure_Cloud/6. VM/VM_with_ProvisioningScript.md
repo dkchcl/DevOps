@@ -200,13 +200,19 @@ http://<public_ip_address>
 
 ---
 
-## 💡 Bonus Tip
+---
 
-Agar tu chaahe to provisioning script me aur bhi cheezein dal sakta hai, jaise:
+## 🔁 Summary of Flow:
 
-* NGINX config change
-* Hostname change
-* App deployment
-* Docker install
+1. Resource Group create hota hai →
+2. VNet & Subnet bante hain →
+3. Public IP & NIC create hota hai →
+4. NSG rules apply hote hain (SSH/HTTP open) →
+5. NIC me NSG attach hota hai →
+6. VM create hoti hai, NIC se connect hoti hai →
+7. VM boot pe provisioning script run hoti hai →
+8. Output me public IP milta hai → browser me access karo.
+
+---
 
 
