@@ -37,7 +37,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "vm-nginx-rg"
+  name     = "dkc-vm-nginx-rg"
   location = "East US"
 }
 
@@ -90,6 +90,7 @@ resource "azurerm_public_ip" "public_ip" {
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   allocation_method   = "Dynamic"
+  sku                 = "Basic"
 }
 
 resource "azurerm_network_interface" "nic" {
@@ -130,12 +131,12 @@ resource "azurerm_linux_virtual_machine" "vm" {
     name                 = "nginx-os-disk"
   }
 
-  source_image_reference {
-    publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "20_04-lts"
-    version   = "latest"
-  }
+ source_image_reference {
+  publisher = "Canonical"
+  offer     = "0001-com-ubuntu-server-focal"
+  sku       = "20_04-lts"
+  version   = "latest"
+}
 
   provision_vm_agent = true
 
