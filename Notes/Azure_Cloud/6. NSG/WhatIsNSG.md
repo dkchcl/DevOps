@@ -1,5 +1,4 @@
 ---
-
 ## 🔐 **What is Azure NSG (Network Security Group)?**
 
 An **NSG (Network Security Group)** in Azure acts like a **firewall** that controls **network traffic** to and from Azure resources — like Virtual Machines (VMs), Subnets, etc.
