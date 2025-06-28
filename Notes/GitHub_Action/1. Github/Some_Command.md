@@ -135,7 +135,7 @@
 
 **Purpose:** Nayi branch `feature/test` create karta hai aur turant usme switch bhi kar deta hai.
 
-OR `git branch feature/test` and after switch 'git checkout feature/test'
+OR `git branch feature/test` and after switch `git checkout feature/test`
 ---
 
 ### ✅ **17. `git branch`**
