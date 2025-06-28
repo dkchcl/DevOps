@@ -1,4 +1,4 @@
-## Git command for Uploads files in Git Repo:
+## Git command for Uploads files on Git Repo:
 
 
 ```
