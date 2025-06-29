@@ -1,4 +1,4 @@
-Here’s a comprehensive list of commonly used Git commands categorized by purpose:
+## List of commonly used Git commands categorized by purpose:
 
 ---
 
@@ -129,9 +129,8 @@ git ls-tree <branch_name>              # List files in a branch
 git cat-file -p <hash>                 # Show the content of a blob, tree, or commit
 ```
 
-Would you like explanations or examples for any specific commands?
 
-**Git commands with detailed explanations and examples:**
+## **Git commands with detailed explanations and examples:**
 
 ---
 
